@@ -114,21 +114,32 @@
 // 概要ページ（index.html）にしかないので、どちらか片方だけでも動くようにしてある
 (function() {
   var target = new Date('2027-02-03T22:00:00+09:00').getTime();
+  var HOUR = 1000 * 60 * 60;
+  var DAY = HOUR * 24;
   var daysEl = document.getElementById('countdown-days');
+  var hoursEl = document.getElementById('countdown-hours');
   var subEl = document.getElementById('countdown-sub');
   var daysHeaderEl = document.getElementById('countdown-days-header');
+  var pendingEl = document.getElementById('countdown-pending');
+  var arrivedEl = document.getElementById('countdown-arrived');
   if (!daysEl && !daysHeaderEl) return;
   function update() {
     var diff = target - Date.now();
     if (diff <= 0) {
-      if (daysEl) daysEl.textContent = '0';
+      // 開幕を迎えたら、大きいカウントダウンは中身を全部消して「開幕」の一言だけにする
+      if (pendingEl) pendingEl.style.display = 'none';
+      if (arrivedEl) arrivedEl.style.display = '';
       if (subEl) subEl.textContent = '開催中／開催済み';
-      if (daysHeaderEl) daysHeaderEl.textContent = '0';
+      if (daysHeaderEl) daysHeaderEl.textContent = '0日0時間';
       return;
     }
-    var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    // 端数を切り上げず、実際に残っている日数・時間数をそのまま表示する
+    // （切り上げだと開催1時間前でも「1日」と出てしまうため）
+    var days = Math.floor(diff / DAY);
+    var hours = Math.floor((diff % DAY) / HOUR);
     if (daysEl) daysEl.textContent = days;
-    if (daysHeaderEl) daysHeaderEl.textContent = days;
+    if (hoursEl) hoursEl.textContent = hours;
+    if (daysHeaderEl) daysHeaderEl.textContent = days + '日' + hours + '時間';
   }
   update();
   setInterval(update, 60 * 1000);
