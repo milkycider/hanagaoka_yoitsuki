@@ -1,0 +1,375 @@
+
+  body { margin: 0; background: oklch(0.14 0.015 50); overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  :root { --header-height: 60px; --footer-height: 70px; }
+  html { scroll-padding-top: var(--header-height); }
+  /* ▼ 上部固定ヘッダー（タイトル＋ナビ） */
+  #site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: oklch(0.12 0.012 50 / 0.92);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid oklch(0.3 0.02 50 / 0.6);
+  }
+  #site-header .header-inner {
+    position: relative;
+    max-width: 1100px; margin: 0 auto; padding: 10px 88px 10px 20px;
+    display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+  }
+  #header-countdown {
+    position: absolute; top: 50%; right: 16px; transform: translateY(-50%);
+    display: flex; align-items: baseline; gap: 5px; white-space: nowrap;
+    font-size: 10.5px; color: oklch(0.62 0.02 70); letter-spacing: 0.02em;
+  }
+  #header-countdown .num {
+    font-family: 'Shippori Mincho', serif; font-size: 17px; font-weight: 700;
+    color: oklch(0.85 0.13 85); line-height: 1;
+  }
+  @media (max-width: 560px) {
+    #header-countdown { position: static; transform: none; justify-content: center; margin-top: 2px; }
+    #site-header .header-inner { padding: 10px 20px; }
+  }
+  #site-header .brand {
+    font-family: 'Shippori Mincho', serif; font-size: 14px; font-weight: 700;
+    color: oklch(0.94 0.012 70); text-decoration: none; white-space: nowrap;
+  }
+  #site-header nav { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+  #site-header nav a {
+    display: inline-flex; align-items: center; padding: 6px 12px;
+    border: 1px solid oklch(0.4 0.02 70 / 0.5); border-radius: 999px;
+    color: oklch(0.85 0.012 70); font-size: 12px; text-decoration: none; white-space: nowrap;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  #site-header nav a:hover { border-color: oklch(0.8 0.13 85 / 0.7); color: oklch(0.96 0.012 70); }
+  #site-header nav a.active {
+    border-color: oklch(0.8 0.13 85); color: oklch(0.14 0.015 50);
+    background: oklch(0.8 0.13 85); font-weight: 700;
+  }
+  #page-wrap { padding-top: var(--header-height); padding-bottom: var(--footer-height); }
+  @keyframes cardDrift {
+    0% { transform: translate(0,0) rotate(var(--r0)); }
+    50% { transform: translate(var(--dx), var(--dy)) rotate(var(--r1)); }
+    100% { transform: translate(0,0) rotate(var(--r0)); }
+  }
+
+  /* ▼ 確定メンバーリスト：横に伸びて崩れる問題への対応 */
+  .member-row { min-width: 0; }
+  .member-link { min-width: 0; flex-wrap: wrap; }
+  .member-handle { word-break: break-all; }
+  @media (max-width: 480px) {
+    .member-row { gap: 10px !important; padding: 14px 4px !important; }
+    .member-role { width: 26px !important; font-size: 10px !important; }
+    .member-link { font-size: 14px !important; }
+    .member-handle { font-size: 12px !important; }
+    .member-badge { font-size: 10px !important; padding: 2px 7px !important; }
+  }
+
+  /* ▼ 花札に文字が埋もれないよう、主要コンテンツの背後にうっすら半透明+ぼかしのパネルを敷く */
+  .content-panel { position: relative; }
+  .content-panel::before {
+    content: "";
+    position: absolute;
+    inset: -16px -20px;
+    background: oklch(0.13 0.015 50 / 0.5);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 55%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* ▼ キャラクターセレクト風の探索者ラインナップ（タップで花札⇄立ち絵にflip） */
+  .char-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: safe center;
+    align-items: flex-start;
+    gap: 18px 14px;
+    padding: 10px 4px 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+  }
+  .char-row.dragging { cursor: grabbing; }
+  .char-card {
+    flex: 0 0 104px;
+    width: 104px;
+    aspect-ratio: 3 / 5;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    perspective: 700px;
+    transition: transform .2s ease;
+  }
+  @media (max-width: 480px) {
+    .char-card { flex: 0 0 84px; width: 84px; }
+    .npc-card { flex: 0 0 84px; width: 84px; }
+  }
+  .char-card:hover, .char-card:focus-visible { transform: translateY(-8px); }
+  /* ▼ NPCカード（探索者カードと同じサイズ感、クリックで詳細モーダル） */
+  .npc-card {
+    flex: 0 0 104px; width: 104px; aspect-ratio: 3 / 5;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px dashed oklch(0.45 0.03 60); border-radius: 6px;
+    background: oklch(0.17 0.015 50); text-align: center;
+    color: oklch(0.7 0.03 70); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; line-height: 1.6;
+    padding: 4px; font-family: inherit; margin: 0; cursor: pointer;
+    transition: transform .2s ease;
+  }
+  .npc-card:hover, .npc-card:focus-visible { transform: translateY(-8px); color: oklch(0.85 0.1 85); border-color: oklch(0.7 0.13 85); }
+  .npc-card:focus-visible { outline: 2px solid oklch(0.8 0.13 85); outline-offset: 4px; }
+
+  /* ▼ 部活動・人間関係のアコーディオン */
+  .info-accordion {
+    max-width: 900px; margin: 0 auto; text-align: left;
+    border: 1px solid oklch(0.3 0.02 50); border-radius: 10px;
+    background: oklch(0.16 0.015 50); overflow: hidden;
+  }
+  .info-accordion summary {
+    cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 18px 22px;
+    font-family: 'Shippori Mincho', serif; font-size: 15.5px; font-weight: 700;
+    color: oklch(0.92 0.012 70);
+  }
+  .info-accordion summary::-webkit-details-marker { display: none; }
+  .info-accordion summary::after {
+    content: "+"; font-size: 20px; font-weight: 400; color: oklch(0.8 0.13 85);
+    transition: transform .2s ease; flex-shrink: 0;
+  }
+  .info-accordion[open] summary::after { transform: rotate(45deg); }
+  .info-accordion-body { padding: 4px 22px 30px; border-top: 1px solid oklch(0.28 0.02 50); }
+  .info-block { margin-top: 28px; }
+  .info-block-title {
+    font-size: 13px; font-weight: 700; color: oklch(0.85 0.012 70);
+    margin: 0 0 14px; text-align: center;
+  }
+  .card-slot { position: relative; }
+  .card-badge {
+    position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+    z-index: 3; background: oklch(0.8 0.13 85); color: oklch(0.14 0.015 50);
+    font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
+    padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,.35);
+  }
+  /* ▼「連れてきた」列：折り返さず1本の横スクロールにする */
+  .bring-pair-wrap { position: relative; margin-bottom: 16px; }
+  .bring-pair-wrap::before, .bring-pair-wrap::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 14px; z-index: 2;
+    pointer-events: none; opacity: 0; transition: opacity .2s ease;
+  }
+  .bring-pair-wrap::before { left: 0; background: linear-gradient(to right, oklch(0.16 0.015 50), transparent); }
+  .bring-pair-wrap::after { right: 0; background: linear-gradient(to left, oklch(0.16 0.015 50), transparent); }
+  .bring-pair-wrap.scrollable::before, .bring-pair-wrap.scrollable::after { opacity: 1; }
+  .bring-pair {
+    display: flex; flex-wrap: nowrap; align-items: center; justify-content: safe center;
+    gap: 14px; padding: 10px 4px 6px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; cursor: grab;
+    scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .bring-pair::-webkit-scrollbar { display: none; }
+  .bring-pair.dragging { cursor: grabbing; }
+  .bring-group { display: flex; flex-wrap: nowrap; gap: 14px; flex: 0 0 auto; }
+  .bring-arrow {
+    flex: 0 0 auto;
+    font-size: 12px; color: oklch(0.68 0.13 85); font-weight: 700; white-space: nowrap;
+    padding: 0 4px;
+  }
+  .char-card:focus-visible { outline: 2px solid oklch(0.8 0.13 85); outline-offset: 4px; border-radius: 8px; }
+  .char-card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform .5s cubic-bezier(.2,.7,.3,1);
+    transform-style: preserve-3d;
+  }
+  .char-card:hover .char-card-inner,
+  .char-card:focus-visible .char-card-inner { transform: rotateY(180deg); }
+  .char-card-face {
+    position: absolute; inset: 0; backface-visibility: hidden;
+    border-radius: 6px; overflow: hidden; border: 1px solid oklch(0.3 0.02 50);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .char-card-front { background: oklch(0.2 0.015 50); }
+  .char-card-front img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .char-card-ho-label {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
+    background: linear-gradient(to top, oklch(0.08 0.01 50 / 0.92), transparent);
+    color: oklch(0.95 0.01 70); font-size: 10.5px; line-height: 1.35; padding: 14px 2px 5px; text-align: center;
+  }
+  .char-card-back { background: oklch(0.18 0.015 50); transform: rotateY(180deg); padding: 6px 2px; }
+  .char-figure { position: relative; width: 56%; height: 80%; }
+  .char-figure svg { display: block; width: 100%; height: 100%; }
+  .char-figure .char-glow {
+    position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+    width: 70%; height: 8px;
+    background: radial-gradient(ellipse, oklch(0.8 0.13 85 / 0.28), transparent 70%);
+    border-radius: 50%;
+  }
+  /* ▼ 立ち絵の上に名前を重ねる（縦書き） */
+  .char-name {
+    position: absolute; top: 12px; bottom: 12px; left: 8px;
+    display: flex; align-items: center;
+    font-size: 16px; font-weight: 700; color: oklch(0.96 0.01 70);
+    writing-mode: vertical-rl; text-orientation: upright;
+    letter-spacing: 0.08em; line-height: 1.3; white-space: nowrap;
+    text-shadow: 0 0 3px oklch(0.08 0.01 50 / 0.95), 0 0 7px oklch(0.08 0.01 50 / 0.85), 0 1px 2px oklch(0.08 0.01 50);
+    z-index: 1; pointer-events: none;
+  }
+  /* ▼ 探索者一覧の2段組みバージョン（横スクロールの代わりに折り返し、カードを大きく表示） */
+  /* カード自体は元のサイズ(170px)のまま固定して、余白側だけを広げて1列表示と横幅を合わせる */
+  .char-grid-2row {
+    display: grid;
+    grid-template-columns: repeat(6, 170px);
+    justify-content: center;
+    gap: 26px 20px;
+  }
+  @media (max-width: 1100px) {
+    .char-grid-2row { grid-template-columns: repeat(auto-fit, 170px); justify-content: center; gap: 24px 18px; }
+  }
+  @media (max-width: 420px) {
+    .char-grid-2row { grid-template-columns: repeat(2, 150px); justify-content: center; gap: 18px; }
+  }
+  .char-card--lg.char-card { width: 100%; flex: none; }
+  .char-card--lg .char-card-ho-label { font-size: 13px; padding: 18px 4px 8px; }
+  .char-card--lg .char-name { font-size: 20px; }
+  .char-card--lg .card-ho-number { font-size: 88px; top: -14px; left: -6px; }
+  .char-card--lg .card-ho-name-vert { font-size: 19px; }
+
+  /* ▼ 探索者一覧カードのオモテ面：左上に大きくHOの数字、右下に縦書きでHO名 */
+  .card-ho-number {
+    position: absolute; top: -10px; left: -4px; z-index: 1;
+    font-family: 'Shippori Mincho', serif; font-size: 64px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.06em;
+    color: oklch(0 0 0);
+  }
+  /* HO名の縦書きテキストがある面だけ、下部にグラデをかけて可読性を上げる */
+  .char-card-front:has(.card-ho-name-vert)::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0; height: 38%;
+    background: linear-gradient(to top, oklch(0.08 0.01 50 / 0.55), transparent);
+    pointer-events: none;
+  }
+  .card-ho-name-vert {
+    position: absolute; bottom: 8px; right: 6px; z-index: 1;
+    writing-mode: vertical-rl; text-orientation: upright;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 15px; font-weight: 700; letter-spacing: 0.06em; line-height: 1.3;
+    color: oklch(0.95 0.01 70);
+    text-shadow: 0 0 3px oklch(0.08 0.01 50 / .9), 0 0 6px oklch(0.08 0.01 50 / .8), 0 1px 2px oklch(0.08 0.01 50);
+  }
+
+  /* ▼ 探索者一覧の表示切替（1列スクロール／2段グリッド）アイコントグル */
+  .view-toggle-group { display: flex; gap: 8px; }
+  .view-toggle-btn {
+    width: 36px; height: 36px; padding: 0; border-radius: 8px; border: 1px solid oklch(0.32 0.02 50);
+    background: oklch(0.17 0.015 50); color: oklch(0.6 0.02 70);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .view-toggle-btn svg { width: 18px; height: 18px; display: block; }
+  .view-toggle-btn:hover { border-color: oklch(0.5 0.05 70); color: oklch(0.88 0.012 70); }
+  .view-toggle-btn.active, .view-toggle-btn.active:hover {
+    background: oklch(0.8 0.13 85); border-color: oklch(0.8 0.13 85); color: oklch(0.14 0.015 50);
+  }
+
+  .char-row-wrap { position: relative; }
+  .char-row-wrap::before, .char-row-wrap::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 14px; z-index: 2;
+    pointer-events: none; opacity: 0; transition: opacity .2s ease;
+  }
+  .char-row-wrap::before { left: 0; background: linear-gradient(to right, oklch(0.14 0.015 50), transparent); }
+  .char-row-wrap::after { right: 0; background: linear-gradient(to left, oklch(0.14 0.015 50), transparent); }
+  /* 実際に横スクロールできる時だけフェードを見せる（JSで判定） */
+  .char-row-wrap.scrollable::before, .char-row-wrap.scrollable::after { opacity: 1; }
+  .char-row {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .char-row::-webkit-scrollbar { display: none; }
+
+
+  /* ▼ BGMコントロール（普段は丸ボタンのみ、ホバー/フォーカスで音量スライダーが伸びる） */
+  #bgm-control {
+    position: fixed; right: 18px; bottom: calc(var(--footer-height) + 14px); z-index: 40;
+    display: flex; align-items: center;
+    background: oklch(0.18 0.015 50 / 0.9); border: 1px solid oklch(0.4 0.02 50);
+    border-radius: 999px; padding: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.4);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    transition: padding .25s ease;
+  }
+  #bgm-toggle {
+    width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+    background: none; border: none;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+  }
+  #bgm-toggle svg { width: 18px; height: 18px; }
+  #bgm-toggle:hover { background: oklch(0.8 0.13 85 / 0.12); }
+  #bgm-volume-wrap {
+    width: 0; overflow: hidden;
+    transition: width .25s ease, margin-left .25s ease;
+    margin-left: 0;
+  }
+  #bgm-control:hover #bgm-volume-wrap,
+  #bgm-control:focus-within #bgm-volume-wrap {
+    width: 64px; margin-left: 6px;
+  }
+  #bgm-control:hover, #bgm-control:focus-within { padding-right: 12px; }
+  #bgm-volume {
+    width: 64px; height: 3px; cursor: pointer;
+    accent-color: oklch(0.8 0.13 85);
+    display: block;
+  }
+
+  /* ▼ 下部固定フッター（シナリオ／BOOTH／BGMクレジット） */
+  #site-footer {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    background: oklch(0.12 0.012 50 / 0.96);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid oklch(0.3 0.02 50 / 0.6);
+    padding: 10px 20px 10px 84px;
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    row-gap: 4px; column-gap: 12px;
+    text-align: center;
+  }
+  #site-footer .footer-line {
+    font-size: 11px; color: oklch(0.6 0.02 70); line-height: 1.4; white-space: nowrap;
+  }
+  #site-footer .footer-line a {
+    color: oklch(0.8 0.13 85); text-decoration: none;
+  }
+  #site-footer .footer-bgm a { color: oklch(0.65 0.11 85); }
+  #site-footer .footer-booth-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: oklch(0.8 0.13 85); color: oklch(0.14 0.015 50);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
+    padding: 2px 9px; border-radius: 999px; text-decoration: none; white-space: nowrap;
+  }
+  #site-footer .footer-booth-btn:hover { background: oklch(0.85 0.13 85); }
+
+  /* ▼ ページ上部へ戻るボタン（フッターと同じ素材でできたインデックスタブが上に覗いている見た目） */
+  /* footer自身のstacking contextの中で z-index を負にすることで、
+     footerの背景（の裏）に潜り込ませ、フッターと地続きの角丸タブに見せる */
+  #back-to-top {
+    position: absolute; left: 20px; top: -22px; z-index: -1;
+    width: 46px; height: 40px;
+    background: oklch(0.12 0.012 50 / 0.96); color: oklch(0.85 0.13 85);
+    border: 1px solid oklch(0.3 0.02 50 / 0.6); border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    box-shadow: none;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    cursor: pointer; font-family: inherit; font-size: 8.5px; font-weight: 700; letter-spacing: 0.05em;
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s ease, top .2s ease;
+  }
+  #back-to-top.visible { opacity: 1; pointer-events: auto; }
+  #back-to-top:hover { top: -27px; color: oklch(0.92 0.13 85); }
+  #back-to-top svg { width: 14px; height: 14px; }
+  @media (max-width: 480px) {
+    #site-footer { padding-left: 20px; }
+    #back-to-top { left: 14px; top: -20px; width: 40px; height: 36px; }
+  }
+

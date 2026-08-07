@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日程・会場 - 私立花ヶ丘高校秘密倶楽部</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">私立花ヶ丘高校秘密倶楽部</a>
+    <nav>
+      <a href="index.html">概要</a>
+      <a href="schedule.html" class="active">日程・会場</a>
+      <a href="members.html">メンバー</a>
+      <a href="investigators.html">探索者</a>
+      <a href="house-rules.html">ハウスルール</a>
+      <a href="character-creation.html">キャラクター作成</a>
+    </nav>
+    <div id="header-countdown">
+      <span>開幕まで</span>
+      <span class="num" id="countdown-days-header">-</span>
+      <span>日</span>
+    </div>
+  </div>
+</header>
+<div id="page-wrap" style="position:relative; background:oklch(0.14 0.015 50); font-family:'Noto Sans JP', sans-serif; color:oklch(0.94 0.012 70); min-height:100vh;">
+
+  <div id="deco-cards" style="position:absolute; top:0; left:0; width:100%; height:3200px; z-index:0; pointer-events:none; overflow:hidden;">
+    <div style="position:absolute; top:3.75%; left:3%; width:130px; height:204px; border-radius:2px; box-shadow:0 18px 41px rgba(0,0,0,.55); --r0:-10deg; --r1:-5deg; --dx:8px; --dy:10px; animation:cardDrift 15s ease-in-out infinite 0s;"><img src="assets/hanafuda/01.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:16.25%; left:8%; width:96px; height:150px; border-radius:2px; box-shadow:0 14px 30px rgba(0,0,0,.50); --r0:12deg; --r1:16deg; --dx:-6px; --dy:8px; animation:cardDrift 19s ease-in-out infinite 1.4s;"><img src="assets/hanafuda/02.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:30.625%; left:5%; width:110px; height:172px; border-radius:2px; box-shadow:0 15px 34px rgba(0,0,0,.50); --r0:-14deg; --r1:-9deg; --dx:7px; --dy:-8px; animation:cardDrift 17s ease-in-out infinite 2.5s;"><img src="assets/hanafuda/03.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:47.5%; left:12%; width:88px; height:138px; border-radius:2px; box-shadow:0 12px 28px rgba(0,0,0,.45); --r0:6deg; --r1:2deg; --dx:-8px; --dy:6px; animation:cardDrift 21s ease-in-out infinite 0.6s;"><img src="assets/hanafuda/04.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:62.5%; left:6%; width:100px; height:156px; border-radius:2px; box-shadow:0 14px 31px rgba(0,0,0,.45); --r0:9deg; --r1:5deg; --dx:6px; --dy:8px; animation:cardDrift 20s ease-in-out infinite 3.3s;"><img src="assets/hanafuda/05.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:81.25%; left:10%; width:92px; height:144px; border-radius:2px; box-shadow:0 13px 29px rgba(0,0,0,.45); --r0:-7deg; --r1:-2deg; --dx:-6px; --dy:7px; animation:cardDrift 18s ease-in-out infinite 1.7s;"><img src="assets/hanafuda/06.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:1.875%; left:82%; width:108px; height:170px; border-radius:2px; box-shadow:0 15px 34px rgba(0,0,0,.55); --r0:15deg; --r1:9deg; --dx:-8px; --dy:8px; animation:cardDrift 16s ease-in-out infinite 0.9s;"><img src="assets/hanafuda/07.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:18.75%; left:88%; width:90px; height:141px; border-radius:2px; box-shadow:0 13px 28px rgba(0,0,0,.45); --r0:-8deg; --r1:-3deg; --dx:6px; --dy:-6px; animation:cardDrift 20s ease-in-out infinite 2s;"><img src="assets/hanafuda/08.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:33.75%; left:84%; width:114px; height:179px; border-radius:2px; box-shadow:0 16px 36px rgba(0,0,0,.50); --r0:9deg; --r1:14deg; --dx:-7px; --dy:9px; animation:cardDrift 18s ease-in-out infinite 3.1s;"><img src="assets/hanafuda/09.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:50%; left:90%; width:84px; height:132px; border-radius:2px; box-shadow:0 12px 26px rgba(0,0,0,.45); --r0:-5deg; --r1:0deg; --dx:6px; --dy:6px; animation:cardDrift 22s ease-in-out infinite 1.8s;"><img src="assets/hanafuda/10.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:65.625%; left:86%; width:100px; height:156px; border-radius:2px; box-shadow:0 14px 31px rgba(0,0,0,.45); --r0:11deg; --r1:6deg; --dx:-6px; --dy:8px; animation:cardDrift 19s ease-in-out infinite 0.4s;"><img src="assets/hanafuda/11.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:84.375%; left:80%; width:92px; height:144px; border-radius:2px; box-shadow:0 13px 29px rgba(0,0,0,.45); --r0:-9deg; --r1:-4deg; --dx:7px; --dy:-7px; animation:cardDrift 21s ease-in-out infinite 2.8s;"><img src="assets/hanafuda/12.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:8.75%; left:44%; width:76px; height:119px; border-radius:2px; box-shadow:0 11px 24px rgba(0,0,0,.40); opacity:0.85; --r0:4deg; --r1:9deg; --dx:5px; --dy:5px; animation:cardDrift 24s ease-in-out infinite 3.6s;"><img src="assets/hanafuda/05.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:55.625%; left:46%; width:74px; height:116px; border-radius:2px; box-shadow:0 10px 23px rgba(0,0,0,.40); opacity:0.85; --r0:-6deg; --r1:-2deg; --dx:-5px; --dy:7px; animation:cardDrift 23s ease-in-out infinite 1.1s;"><img src="assets/hanafuda/02.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+  </div>
+  <div id="schedule" style="position:relative; z-index:1; background:oklch(0.11 0.012 50 / 0.88); padding:72px 24px 24px;">
+    <div style="max-width:920px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:44px;">
+        <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">SCHEDULE</div>
+        <h2 style="font-family:'Shippori Mincho', serif; font-size:28px; margin:0; font-weight:700;">日程・会場</h2>
+        <p style="color:oklch(0.72 0.02 70); font-size:14px; margin:14px auto 0; max-width:560px; line-height:1.8;">2〜4月の水曜・土曜固定、22:00〜25:00の週2日・各3時間。<span style="color:oklch(0.75 0.11 85);">水</span>・<span style="color:oklch(0.65 0.16 30);">土</span>をハイライトしています。最短の時間で終了した場合、2月の8日間で完結する可能性があります。</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
+
+        <div style="background:oklch(0.17 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:20px;">
+          <div style="font-family:'Shippori Mincho', serif; font-size:18px; margin-bottom:14px; color:oklch(0.94 0.012 70); text-align:center;">2月</div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px; font-size:11px; color:oklch(0.55 0.02 70); text-align:center; margin-bottom:6px;"><div>日</div><div>月</div><div>火</div><div style="color:oklch(0.75 0.11 85);">水</div><div>木</div><div>金</div><div style="color:oklch(0.65 0.16 30);">土</div></div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px;">
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">1</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">2</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">3</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">4</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">5</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">6</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">7</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">8</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">9</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">10</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">11</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">12</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">13</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">14</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">15</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">16</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">17</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">18</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">19</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">20</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">21</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">22</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">23</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">24</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">25</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">26</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">27</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">28</span></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+          </div>
+          <div style="margin-top:14px; font-size:11.5px; color:oklch(0.6 0.02 70); text-align:center;">最短の時間で終了した場合、この8日間で完結する可能性あり</div>
+        </div>
+
+        <div style="background:oklch(0.17 0.015 50); border:1px solid oklch(0.28 0.02 50); border-radius:10px; padding:20px;">
+          <div style="font-family:'Shippori Mincho', serif; font-size:18px; margin-bottom:14px; color:oklch(0.94 0.012 70); text-align:center;">3月</div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px; font-size:11px; color:oklch(0.55 0.02 70); text-align:center; margin-bottom:6px;"><div>日</div><div>月</div><div>火</div><div style="color:oklch(0.75 0.11 85);">水</div><div>木</div><div>金</div><div style="color:oklch(0.65 0.16 30);">土</div></div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px;">
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">1</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">2</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">3</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">4</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">5</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">6</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">7</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">8</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">9</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">10</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">11</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">12</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">13</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">14</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">15</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">16</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">17</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">18</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">19</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">20</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">21</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">22</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">23</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">24</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">25</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">26</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.5 0.17 30 / 0.28); border:1px solid oklch(0.55 0.18 30 / 0.7); border-radius:5px; color:oklch(0.85 0.1 40); font-weight:700;">27</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">28</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">29</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">30</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:oklch(0.8 0.13 85 / 0.22); border:1px solid oklch(0.8 0.13 85 / 0.6); border-radius:5px; color:oklch(0.9 0.1 85); font-weight:700;">31</span></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+          </div>
+          <div style="margin-top:14px; font-size:11.5px; color:oklch(0.6 0.02 70); text-align:center;">進行の遅れ・イレギュラー用の予備期間</div>
+        </div>
+
+        <div style="background:oklch(0.17 0.015 50); border:1px dashed oklch(0.4 0.02 50); border-radius:10px; padding:20px; opacity:0.6;">
+          <div style="font-family:'Shippori Mincho', serif; font-size:18px; margin-bottom:14px; color:oklch(0.94 0.012 70); text-align:center;">4月</div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px; font-size:11px; color:oklch(0.55 0.02 70); text-align:center; margin-bottom:6px;"><div>日</div><div>月</div><div>火</div><div style="color:oklch(0.75 0.11 85);">水</div><div>木</div><div>金</div><div style="color:oklch(0.65 0.16 30);">土</div></div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px;">
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1;"></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">1</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">2</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.55 0.18 30 / 0.5); border-radius:5px; color:oklch(0.7 0.1 40);">3</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">4</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">5</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">6</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.8 0.13 85 / 0.5); border-radius:5px; color:oklch(0.75 0.1 85);">7</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">8</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">9</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.55 0.18 30 / 0.5); border-radius:5px; color:oklch(0.7 0.1 40);">10</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">11</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">12</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">13</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.8 0.13 85 / 0.5); border-radius:5px; color:oklch(0.75 0.1 85);">14</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">15</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">16</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.55 0.18 30 / 0.5); border-radius:5px; color:oklch(0.7 0.1 40);">17</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">18</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">19</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">20</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.8 0.13 85 / 0.5); border-radius:5px; color:oklch(0.75 0.1 85);">21</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">22</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">23</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.55 0.18 30 / 0.5); border-radius:5px; color:oklch(0.7 0.1 40);">24</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">25</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">26</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">27</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:1px dashed oklch(0.8 0.13 85 / 0.5); border-radius:5px; color:oklch(0.75 0.1 85);">28</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">29</span></div>
+            <div style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:5px; font-size:12px;"><span style="color:oklch(0.5 0.015 70);">30</span></div>
+            <div style="aspect-ratio:1;"></div>
+          </div>
+          <div style="margin-top:14px; font-size:11.5px; color:oklch(0.6 0.02 70); text-align:center;">KP判断次第で早めに開放の可能性あり</div>
+        </div>
+
+      </div>
+      <p style="text-align:center; color:oklch(0.6 0.02 70); font-size:12.5px; margin-top:28px; line-height:1.9;">体調不良・イレギュラーがあった際はスキップ／30分以内の遅刻や進捗状況により延長の可能性あり（あくまで全員の体調は最優先）</p>
+    </div>
+  </div>
+
+  <div id="links" class="content-panel" style="position:relative; z-index:1; max-width:760px; margin:0 auto; padding:40px 24px 112px; text-align:center;">
+    <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">LINKS</div>
+    <h2 style="font-family:'Shippori Mincho', serif; font-size:26px; margin:0 0 16px; font-weight:700;">参加用リンク</h2>
+    <p style="color:oklch(0.65 0.02 70); font-size:13px; margin:0 0 28px; line-height:1.8;">ココフォリア部屋のリンクは発行され次第、このページに公開します。</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://discord.com/channels/1503812629678919773/1503812631033549002" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; background:oklch(0.8 0.13 85); color:oklch(0.14 0.015 50); font-weight:700; padding:18px 32px; border-radius:8px; text-decoration:none; font-size:15px; min-width:200px;">
+        Discordサーバー
+      </a>
+      <a href="#" style="display:inline-flex; flex-direction:column; align-items:center; gap:6px; background:oklch(0.19 0.015 50); border:1px solid oklch(0.32 0.02 50); color:oklch(0.65 0.02 70); font-weight:700; padding:18px 32px; border-radius:8px; text-decoration:none; font-size:15px; min-width:200px; cursor:default;">
+        ココフォリア部屋
+        <span style="font-size:11px; font-weight:400; color:oklch(0.6 0.16 30);">開催が近づき次第発行</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+  <footer id="site-footer">
+    <button id="back-to-top" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="ページ上部へ戻る">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+      <span>TOP</span>
+    </button>
+    <span class="footer-line">シナリオ：私立花ヶ丘高校秘密倶楽部</span>
+    <a class="footer-booth-btn" href="https://meltpopon.booth.pm/items/8059378" target="_blank" rel="noopener">BOOTHで見る</a>
+    <span class="footer-line footer-bgm">BGM：ふういん神社 by もみじばミュージック（<a href="https://music.storyinvention.com/" target="_blank" rel="noopener">music.storyinvention.com</a>）</span>
+  </footer>
+
+  <audio id="bgm" loop preload="none" muted>
+    <source src="assets/bgm/fuuin-zinja.mp3" type="audio/mpeg">
+  </audio>
+  <div id="bgm-control">
+    <button id="bgm-toggle" type="button" onclick="toggleBgm()" aria-label="BGMの再生・停止">
+      <svg id="bgm-icon-off" viewBox="0 0 24 24" fill="none" stroke="oklch(0.75 0.02 70)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4 8 4 16 9 16 14 20 14 4 9 8" fill="oklch(0.75 0.02 70)" stroke="none"/><line x1="16.5" y1="8.5" x2="21.5" y2="14.5"/><line x1="21.5" y1="8.5" x2="16.5" y2="14.5"/></svg>
+      <svg id="bgm-icon-on" viewBox="0 0 24 24" fill="none" stroke="oklch(0.85 0.13 85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="4 8 4 16 9 16 14 20 14 4 9 8" fill="oklch(0.85 0.13 85)" stroke="none"/><path d="M16 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg>
+    </button>
+    <div id="bgm-volume-wrap">
+      <input id="bgm-volume" type="range" min="0" max="100" value="23" oninput="setBgmVolume(this.value)" aria-label="音量">
+    </div>
+  </div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

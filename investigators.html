@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>探索者・事前情報 - 私立花ヶ丘高校秘密倶楽部</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">私立花ヶ丘高校秘密倶楽部</a>
+    <nav>
+      <a href="index.html">概要</a>
+      <a href="schedule.html">日程・会場</a>
+      <a href="members.html">メンバー</a>
+      <a href="investigators.html" class="active">探索者</a>
+      <a href="house-rules.html">ハウスルール</a>
+      <a href="character-creation.html">キャラクター作成</a>
+    </nav>
+    <div id="header-countdown">
+      <span>開幕まで</span>
+      <span class="num" id="countdown-days-header">-</span>
+      <span>日</span>
+    </div>
+  </div>
+</header>
+<div id="page-wrap" style="position:relative; background:oklch(0.14 0.015 50); font-family:'Noto Sans JP', sans-serif; color:oklch(0.94 0.012 70); min-height:100vh;">
+
+  <div id="deco-cards" style="position:absolute; top:0; left:0; width:100%; height:3200px; z-index:0; pointer-events:none; overflow:hidden;">
+    <div style="position:absolute; top:3.75%; left:3%; width:130px; height:204px; border-radius:2px; box-shadow:0 18px 41px rgba(0,0,0,.55); --r0:-10deg; --r1:-5deg; --dx:8px; --dy:10px; animation:cardDrift 15s ease-in-out infinite 0s;"><img src="assets/hanafuda/01.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:16.25%; left:8%; width:96px; height:150px; border-radius:2px; box-shadow:0 14px 30px rgba(0,0,0,.50); --r0:12deg; --r1:16deg; --dx:-6px; --dy:8px; animation:cardDrift 19s ease-in-out infinite 1.4s;"><img src="assets/hanafuda/02.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:30.625%; left:5%; width:110px; height:172px; border-radius:2px; box-shadow:0 15px 34px rgba(0,0,0,.50); --r0:-14deg; --r1:-9deg; --dx:7px; --dy:-8px; animation:cardDrift 17s ease-in-out infinite 2.5s;"><img src="assets/hanafuda/03.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:47.5%; left:12%; width:88px; height:138px; border-radius:2px; box-shadow:0 12px 28px rgba(0,0,0,.45); --r0:6deg; --r1:2deg; --dx:-8px; --dy:6px; animation:cardDrift 21s ease-in-out infinite 0.6s;"><img src="assets/hanafuda/04.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:62.5%; left:6%; width:100px; height:156px; border-radius:2px; box-shadow:0 14px 31px rgba(0,0,0,.45); --r0:9deg; --r1:5deg; --dx:6px; --dy:8px; animation:cardDrift 20s ease-in-out infinite 3.3s;"><img src="assets/hanafuda/05.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:81.25%; left:10%; width:92px; height:144px; border-radius:2px; box-shadow:0 13px 29px rgba(0,0,0,.45); --r0:-7deg; --r1:-2deg; --dx:-6px; --dy:7px; animation:cardDrift 18s ease-in-out infinite 1.7s;"><img src="assets/hanafuda/06.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:1.875%; left:82%; width:108px; height:170px; border-radius:2px; box-shadow:0 15px 34px rgba(0,0,0,.55); --r0:15deg; --r1:9deg; --dx:-8px; --dy:8px; animation:cardDrift 16s ease-in-out infinite 0.9s;"><img src="assets/hanafuda/07.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:18.75%; left:88%; width:90px; height:141px; border-radius:2px; box-shadow:0 13px 28px rgba(0,0,0,.45); --r0:-8deg; --r1:-3deg; --dx:6px; --dy:-6px; animation:cardDrift 20s ease-in-out infinite 2s;"><img src="assets/hanafuda/08.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:33.75%; left:84%; width:114px; height:179px; border-radius:2px; box-shadow:0 16px 36px rgba(0,0,0,.50); --r0:9deg; --r1:14deg; --dx:-7px; --dy:9px; animation:cardDrift 18s ease-in-out infinite 3.1s;"><img src="assets/hanafuda/09.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:50%; left:90%; width:84px; height:132px; border-radius:2px; box-shadow:0 12px 26px rgba(0,0,0,.45); --r0:-5deg; --r1:0deg; --dx:6px; --dy:6px; animation:cardDrift 22s ease-in-out infinite 1.8s;"><img src="assets/hanafuda/10.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:65.625%; left:86%; width:100px; height:156px; border-radius:2px; box-shadow:0 14px 31px rgba(0,0,0,.45); --r0:11deg; --r1:6deg; --dx:-6px; --dy:8px; animation:cardDrift 19s ease-in-out infinite 0.4s;"><img src="assets/hanafuda/11.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:84.375%; left:80%; width:92px; height:144px; border-radius:2px; box-shadow:0 13px 29px rgba(0,0,0,.45); --r0:-9deg; --r1:-4deg; --dx:7px; --dy:-7px; animation:cardDrift 21s ease-in-out infinite 2.8s;"><img src="assets/hanafuda/12.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:8.75%; left:44%; width:76px; height:119px; border-radius:2px; box-shadow:0 11px 24px rgba(0,0,0,.40); opacity:0.85; --r0:4deg; --r1:9deg; --dx:5px; --dy:5px; animation:cardDrift 24s ease-in-out infinite 3.6s;"><img src="assets/hanafuda/05.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:55.625%; left:46%; width:74px; height:116px; border-radius:2px; box-shadow:0 10px 23px rgba(0,0,0,.40); opacity:0.85; --r0:-6deg; --r1:-2deg; --dx:-5px; --dy:7px; animation:cardDrift 23s ease-in-out infinite 1.1s;"><img src="assets/hanafuda/02.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+  </div>
+  <div id="investigators" class="content-panel" style="position:relative; z-index:1; max-width:1600px; margin:0 auto; padding:80px 32px;">
+    <div style="text-align:center; margin-bottom:18px;">
+      <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">INVESTIGATORS</div>
+      <h2 style="font-family:'Shippori Mincho', serif; font-size:28px; margin:0; font-weight:700;">探索者一覧</h2>
+    </div>
+    <div style="margin:0 0 12px; display:flex; justify-content:flex-end;">
+      <div class="view-toggle-group">
+        <button type="button" id="view-toggle-row" class="view-toggle-btn active" onclick="setInvestigatorView('row')" aria-label="1列表示に切り替え" title="1列表示">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <rect x="2" y="6" width="5" height="12" rx="1"/>
+            <rect x="9.5" y="6" width="5" height="12" rx="1"/>
+            <rect x="17" y="6" width="5" height="12" rx="1"/>
+          </svg>
+        </button>
+        <button type="button" id="view-toggle-grid" class="view-toggle-btn" onclick="setInvestigatorView('grid')" aria-label="2段表示に切り替え" title="2段表示">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <rect x="2" y="3" width="5" height="7" rx="1"/>
+            <rect x="9.5" y="3" width="5" height="7" rx="1"/>
+            <rect x="17" y="3" width="5" height="7" rx="1"/>
+            <rect x="2" y="14" width="5" height="7" rx="1"/>
+            <rect x="9.5" y="14" width="5" height="7" rx="1"/>
+            <rect x="17" y="14" width="5" height="7" rx="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="investigator-view-row">
+    <div class="char-row-wrap"><div class="char-row">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho1')" aria-label="探索者A HO1 松に鶴">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/01.png" alt="花札 松に鶴">
+            <div class="card-ho-number">1</div>
+            <div class="card-ho-name-vert">松に鶴</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者A</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho2')" aria-label="探索者B HO2 梅に鶯">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/02.png" alt="花札 梅に鶯">
+            <div class="card-ho-number">2</div>
+            <div class="card-ho-name-vert">梅に鶯</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者B</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho3')" aria-label="探索者C HO3 桜に幕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/03.png" alt="花札 桜に幕">
+            <div class="card-ho-number">3</div>
+            <div class="card-ho-name-vert">桜に幕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者C</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho4')" aria-label="探索者D HO4 藤に不如帰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/04.png" alt="花札 藤に不如帰">
+            <div class="card-ho-number">4</div>
+            <div class="card-ho-name-vert">藤に不如帰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者D</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho5')" aria-label="探索者E HO5 菖蒲に八橋">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/05.png" alt="花札 菖蒲に八橋">
+            <div class="card-ho-number">5</div>
+            <div class="card-ho-name-vert">菖蒲に八橋</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者E</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho6')" aria-label="探索者F HO6 牡丹に蝶">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/06.png" alt="花札 牡丹に蝶">
+            <div class="card-ho-number">6</div>
+            <div class="card-ho-name-vert">牡丹に蝶</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者F</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho7')" aria-label="探索者G HO7 萩に猪">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/07.png" alt="花札 萩に猪">
+            <div class="card-ho-number">7</div>
+            <div class="card-ho-name-vert">萩に猪</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者G</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho8')" aria-label="探索者H HO8 芒に月">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/08.png" alt="花札 芒に月">
+            <div class="card-ho-number">8</div>
+            <div class="card-ho-name-vert">芒に月</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者H</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho9')" aria-label="探索者I HO9 菊に盃">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/09.png" alt="花札 菊に盃">
+            <div class="card-ho-number">9</div>
+            <div class="card-ho-name-vert">菊に盃</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者I</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho10')" aria-label="探索者J HO10 紅葉に鹿">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/10.png" alt="花札 紅葉に鹿">
+            <div class="card-ho-number">10</div>
+            <div class="card-ho-name-vert">紅葉に鹿</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者J</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho11')" aria-label="探索者K HO11 柳に燕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/11.png" alt="花札 柳に燕">
+            <div class="card-ho-number">11</div>
+            <div class="card-ho-name-vert">柳に燕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者K</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho12')" aria-label="探索者L HO12 桐に鳳凰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/12.png" alt="花札 桐に鳳凰">
+            <div class="card-ho-number">12</div>
+            <div class="card-ho-name-vert">桐に鳳凰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者L</div>
+          </div>
+        </div>
+      </button>
+    </div></div>
+    </div>
+
+    <div id="investigator-view-grid" style="display:none;">
+    <div class="char-grid-2row">
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho1')" aria-label="探索者A HO1 松に鶴">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/01.png" alt="花札 松に鶴">
+            <div class="card-ho-number">1</div>
+            <div class="card-ho-name-vert">松に鶴</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者A</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho2')" aria-label="探索者B HO2 梅に鶯">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/02.png" alt="花札 梅に鶯">
+            <div class="card-ho-number">2</div>
+            <div class="card-ho-name-vert">梅に鶯</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者B</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho3')" aria-label="探索者C HO3 桜に幕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/03.png" alt="花札 桜に幕">
+            <div class="card-ho-number">3</div>
+            <div class="card-ho-name-vert">桜に幕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者C</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho4')" aria-label="探索者D HO4 藤に不如帰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/04.png" alt="花札 藤に不如帰">
+            <div class="card-ho-number">4</div>
+            <div class="card-ho-name-vert">藤に不如帰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者D</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho5')" aria-label="探索者E HO5 菖蒲に八橋">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/05.png" alt="花札 菖蒲に八橋">
+            <div class="card-ho-number">5</div>
+            <div class="card-ho-name-vert">菖蒲に八橋</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者E</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho6')" aria-label="探索者F HO6 牡丹に蝶">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/06.png" alt="花札 牡丹に蝶">
+            <div class="card-ho-number">6</div>
+            <div class="card-ho-name-vert">牡丹に蝶</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者F</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho7')" aria-label="探索者G HO7 萩に猪">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/07.png" alt="花札 萩に猪">
+            <div class="card-ho-number">7</div>
+            <div class="card-ho-name-vert">萩に猪</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者G</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho8')" aria-label="探索者H HO8 芒に月">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/08.png" alt="花札 芒に月">
+            <div class="card-ho-number">8</div>
+            <div class="card-ho-name-vert">芒に月</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者H</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho9')" aria-label="探索者I HO9 菊に盃">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/09.png" alt="花札 菊に盃">
+            <div class="card-ho-number">9</div>
+            <div class="card-ho-name-vert">菊に盃</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者I</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho10')" aria-label="探索者J HO10 紅葉に鹿">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/10.png" alt="花札 紅葉に鹿">
+            <div class="card-ho-number">10</div>
+            <div class="card-ho-name-vert">紅葉に鹿</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者J</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho11')" aria-label="探索者K HO11 柳に燕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/11.png" alt="花札 柳に燕">
+            <div class="card-ho-number">11</div>
+            <div class="card-ho-name-vert">柳に燕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者K</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card char-card--lg" type="button" onclick="openCharacterModal('ho12')" aria-label="探索者L HO12 桐に鳳凰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/12.png" alt="花札 桐に鳳凰">
+            <div class="card-ho-number">12</div>
+            <div class="card-ho-name-vert">桐に鳳凰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者L</div>
+          </div>
+        </div>
+      </button>
+    </div>
+    </div>
+  </div>
+
+  <div id="ho-groups" class="content-panel" style="position:relative; z-index:1; max-width:1600px; margin:0 auto; padding:0 32px 120px;">
+    <div style="text-align:center; margin-bottom:40px;">
+      <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">BACKGROUND</div>
+      <h2 style="font-family:'Shippori Mincho', serif; font-size:28px; margin:0 0 10px; font-weight:700;">事前情報</h2>
+      <p style="font-size:13px; color:oklch(0.65 0.02 70); margin:0 auto; max-width:560px; line-height:1.8;">探索者たちの所属する学校は、HOごとに異なります。</p>
+    </div>
+
+    <div style="margin-bottom:48px;">
+      <div style="text-align:center; margin-bottom:18px;">
+        <h3 style="font-family:'Shippori Mincho', serif; font-size:18px; margin:0 0 6px; font-weight:700; color:oklch(0.92 0.012 70);">✧ 花ヶ丘（はながおか）高校</h3>
+        <p style="font-size:12px; color:oklch(0.58 0.02 70); margin:0;">NPC：3人</p>
+      </div>
+    <div class="char-row-wrap"><div class="char-row" style="justify-content:safe center;">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho6')" aria-label="探索者F HO6 牡丹に蝶">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/06.png" alt="花札 牡丹に蝶">
+            <div class="char-card-ho-label">HO6<br>牡丹に蝶</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者F</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho7')" aria-label="探索者G HO7 萩に猪">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/07.png" alt="花札 萩に猪">
+            <div class="char-card-ho-label">HO7<br>萩に猪</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者G</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho10')" aria-label="探索者J HO10 紅葉に鹿">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/10.png" alt="花札 紅葉に鹿">
+            <div class="char-card-ho-label">HO10<br>紅葉に鹿</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者J</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho11')" aria-label="探索者K HO11 柳に燕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/11.png" alt="花札 柳に燕">
+            <div class="char-card-ho-label">HO11<br>柳に燕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者K</div>
+          </div>
+        </div>
+      </button>
+      <button class="npc-card" type="button" onclick="openCharacterModal('npc-sugawara')">菅原恋</button>
+      <button class="npc-card" type="button" onclick="openCharacterModal('npc-onomichi')">小野道幸雨</button>
+      <button class="npc-card" type="button" onclick="openCharacterModal('npc-okada')">岡田八矢</button>
+    </div></div>
+
+      <p style="font-size:13px; line-height:1.9; color:oklch(0.78 0.012 70); max-width:640px; margin:22px auto 0; text-align:center;">山と海と田んぼに挟まれた田舎の高校。最寄駅までは徒歩10分かかる。周りに遊べる環境はほとんどない。</p>
+    </div>
+
+    <div style="margin-bottom:48px;">
+      <div style="text-align:center; margin-bottom:18px;">
+        <h3 style="font-family:'Shippori Mincho', serif; font-size:18px; margin:0; font-weight:700; color:oklch(0.92 0.012 70);">✧ 四方谷（よもや）高校</h3>
+      </div>
+    <div class="char-row-wrap"><div class="char-row" style="justify-content:safe center;">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho1')" aria-label="探索者A HO1 松に鶴">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/01.png" alt="花札 松に鶴">
+            <div class="char-card-ho-label">HO1<br>松に鶴</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者A</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho3')" aria-label="探索者C HO3 桜に幕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/03.png" alt="花札 桜に幕">
+            <div class="char-card-ho-label">HO3<br>桜に幕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者C</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho8')" aria-label="探索者H HO8 芒に月">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/08.png" alt="花札 芒に月">
+            <div class="char-card-ho-label">HO8<br>芒に月</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者H</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho9')" aria-label="探索者I HO9 菊に盃">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/09.png" alt="花札 菊に盃">
+            <div class="char-card-ho-label">HO9<br>菊に盃</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者I</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho12')" aria-label="探索者L HO12 桐に鳳凰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/12.png" alt="花札 桐に鳳凰">
+            <div class="char-card-ho-label">HO12<br>桐に鳳凰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者L</div>
+          </div>
+        </div>
+      </button>
+    </div></div>
+
+      <p style="font-size:13px; line-height:1.9; color:oklch(0.78 0.012 70); max-width:640px; margin:22px auto 0; text-align:center;">花ヶ丘と違い、比較的栄えている街の近くにある高校。駅近で、ファミレスやカラオケボックスなどがある。自称進学校。</p>
+    </div>
+
+    <div style="margin-bottom:40px;">
+      <div style="text-align:center; margin-bottom:18px;">
+        <h3 style="font-family:'Shippori Mincho', serif; font-size:18px; margin:0; font-weight:700; color:oklch(0.92 0.012 70);">✧ 上記2つ以外の学校（校名自由）</h3>
+      </div>
+    <div class="char-row-wrap"><div class="char-row" style="justify-content:safe center;">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho2')" aria-label="探索者B HO2 梅に鶯">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/02.png" alt="花札 梅に鶯">
+            <div class="char-card-ho-label">HO2<br>梅に鶯</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者B</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho4')" aria-label="探索者D HO4 藤に不如帰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/04.png" alt="花札 藤に不如帰">
+            <div class="char-card-ho-label">HO4<br>藤に不如帰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者D</div>
+          </div>
+        </div>
+      </button>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho5')" aria-label="探索者E HO5 菖蒲に八橋">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/05.png" alt="花札 菖蒲に八橋">
+            <div class="char-card-ho-label">HO5<br>菖蒲に八橋</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者E</div>
+          </div>
+        </div>
+      </button>
+    </div></div>
+
+    </div>
+
+    <p style="text-align:center; font-size:12.5px; color:oklch(0.58 0.02 70); margin:0 0 40px; line-height:1.8;">舞台は田舎の学校である。地域としては東北の方。都会ではない。</p>
+
+    <details class="info-accordion">
+      <summary>部活動・人間関係の詳細</summary>
+      <div class="info-accordion-body">
+
+        <div class="info-block">
+          <p class="info-block-title">花ヶ丘高校オカルト部所属</p>
+        <div class="char-row-wrap"><div class="char-row" style="justify-content:safe center;">
+        <div class="card-slot"><span class="card-badge">部長</span><button class="npc-card" type="button" onclick="openCharacterModal('npc-sugawara')">菅原恋</button></div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho6')" aria-label="探索者F HO6 牡丹に蝶">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/06.png" alt="花札 牡丹に蝶">
+            <div class="char-card-ho-label">HO6<br>牡丹に蝶</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者F</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho7')" aria-label="探索者G HO7 萩に猪">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/07.png" alt="花札 萩に猪">
+            <div class="char-card-ho-label">HO7<br>萩に猪</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者G</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho10')" aria-label="探索者J HO10 紅葉に鹿">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/10.png" alt="花札 紅葉に鹿">
+            <div class="char-card-ho-label">HO10<br>紅葉に鹿</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者J</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho11')" aria-label="探索者K HO11 柳に燕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/11.png" alt="花札 柳に燕">
+            <div class="char-card-ho-label">HO11<br>柳に燕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者K</div>
+          </div>
+        </div>
+      </button>
+      </div>
+        <div class="card-slot"><button class="npc-card" type="button" onclick="openCharacterModal('npc-onomichi')">小野道幸雨</button></div>
+        <div class="card-slot"><span class="card-badge">顧問</span><button class="npc-card" type="button" onclick="openCharacterModal('npc-okada')">岡田八矢</button></div>
+        </div></div>
+        </div>
+
+        <div class="info-block">
+          <p class="info-block-title">四方谷高校　オカルト部or新聞部</p>
+          <div class="bring-pair-wrap"><div class="bring-pair">
+        <div class="bring-group">
+      <div class="card-slot">
+        <span class="card-badge">部長</span>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho1')" aria-label="探索者A HO1 松に鶴">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/01.png" alt="花札 松に鶴">
+            <div class="char-card-ho-label">HO1<br>松に鶴</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者A</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+        <span class="card-badge">副部長</span>
+      <button class="char-card" type="button" onclick="openCharacterModal('ho3')" aria-label="探索者C HO3 桜に幕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/03.png" alt="花札 桜に幕">
+            <div class="char-card-ho-label">HO3<br>桜に幕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者C</div>
+          </div>
+        </div>
+      </button>
+      </div>
+        </div>
+            <span class="bring-arrow">連れてきた →</span>
+        <div class="bring-group">
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho8')" aria-label="探索者H HO8 芒に月">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/08.png" alt="花札 芒に月">
+            <div class="char-card-ho-label">HO8<br>芒に月</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者H</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho9')" aria-label="探索者I HO9 菊に盃">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/09.png" alt="花札 菊に盃">
+            <div class="char-card-ho-label">HO9<br>菊に盃</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者I</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho12')" aria-label="探索者L HO12 桐に鳳凰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/12.png" alt="花札 桐に鳳凰">
+            <div class="char-card-ho-label">HO12<br>桐に鳳凰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者L</div>
+          </div>
+        </div>
+      </button>
+      </div>
+        </div>
+          </div></div>
+        </div>
+
+        <div class="info-block">
+          <p class="info-block-title">学校・部活動は自由（友達同士）</p>
+          <div class="bring-pair-wrap"><div class="bring-pair">
+        <div class="bring-group">
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho2')" aria-label="探索者B HO2 梅に鶯">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/02.png" alt="花札 梅に鶯">
+            <div class="char-card-ho-label">HO2<br>梅に鶯</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者B</div>
+          </div>
+        </div>
+      </button>
+      </div>
+        </div>
+            <span class="bring-arrow">連れてきた →</span>
+        <div class="bring-group">
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho4')" aria-label="探索者D HO4 藤に不如帰">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/04.png" alt="花札 藤に不如帰">
+            <div class="char-card-ho-label">HO4<br>藤に不如帰</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者D</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho5')" aria-label="探索者E HO5 菖蒲に八橋">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/05.png" alt="花札 菖蒲に八橋">
+            <div class="char-card-ho-label">HO5<br>菖蒲に八橋</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者E</div>
+          </div>
+        </div>
+      </button>
+      </div>
+        </div>
+          </div></div>
+        </div>
+
+        <div class="info-block">
+          <p class="info-block-title">元々の知り合い（百物語の誘いに乗り花ヶ丘高校へ）</p>
+        <div class="char-row-wrap"><div class="char-row" style="justify-content:safe center;">
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho1')" aria-label="探索者A HO1 松に鶴">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/01.png" alt="花札 松に鶴">
+            <div class="char-card-ho-label">HO1<br>松に鶴</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者A</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho2')" aria-label="探索者B HO2 梅に鶯">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/02.png" alt="花札 梅に鶯">
+            <div class="char-card-ho-label">HO2<br>梅に鶯</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者B</div>
+          </div>
+        </div>
+      </button>
+      </div>
+      <div class="card-slot">
+      <button class="char-card" type="button" onclick="openCharacterModal('ho3')" aria-label="探索者C HO3 桜に幕">
+        <div class="char-card-inner">
+          <div class="char-card-face char-card-front">
+            <img src="assets/hanafuda/03.png" alt="花札 桜に幕">
+            <div class="char-card-ho-label">HO3<br>桜に幕</div>
+          </div>
+          <div class="char-card-face char-card-back">
+            <div class="char-figure"><div class="char-glow"></div><svg viewBox="0 0 60 130"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg></div>
+            <div class="char-name">探索者C</div>
+          </div>
+        </div>
+      </button>
+      </div>
+        <div class="card-slot"><button class="npc-card" type="button" onclick="openCharacterModal('npc-sugawara')">菅原恋</button></div>
+        </div></div>
+        </div>
+
+      </div>
+    </details>
+  </div>
+
+</div>
+
+  <footer id="site-footer">
+    <button id="back-to-top" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="ページ上部へ戻る">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+      <span>TOP</span>
+    </button>
+    <span class="footer-line">シナリオ：私立花ヶ丘高校秘密倶楽部</span>
+    <a class="footer-booth-btn" href="https://meltpopon.booth.pm/items/8059378" target="_blank" rel="noopener">BOOTHで見る</a>
+    <span class="footer-line footer-bgm">BGM：ふういん神社 by もみじばミュージック（<a href="https://music.storyinvention.com/" target="_blank" rel="noopener">music.storyinvention.com</a>）</span>
+  </footer>
+
+  <audio id="bgm" loop preload="none" muted>
+    <source src="assets/bgm/fuuin-zinja.mp3" type="audio/mpeg">
+  </audio>
+  <div id="bgm-control">
+    <button id="bgm-toggle" type="button" onclick="toggleBgm()" aria-label="BGMの再生・停止">
+      <svg id="bgm-icon-off" viewBox="0 0 24 24" fill="none" stroke="oklch(0.75 0.02 70)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4 8 4 16 9 16 14 20 14 4 9 8" fill="oklch(0.75 0.02 70)" stroke="none"/><line x1="16.5" y1="8.5" x2="21.5" y2="14.5"/><line x1="21.5" y1="8.5" x2="16.5" y2="14.5"/></svg>
+      <svg id="bgm-icon-on" viewBox="0 0 24 24" fill="none" stroke="oklch(0.85 0.13 85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="4 8 4 16 9 16 14 20 14 4 9 8" fill="oklch(0.85 0.13 85)" stroke="none"/><path d="M16 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg>
+    </button>
+    <div id="bgm-volume-wrap">
+      <input id="bgm-volume" type="range" min="0" max="100" value="23" oninput="setBgmVolume(this.value)" aria-label="音量">
+    </div>
+  </div>
+<!-- 探索者・NPCモーダル（データ・表示ロジック・モーダルの入れ物）はこのファイルにまとまっています -->
+<script src="assets/js/characters.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
