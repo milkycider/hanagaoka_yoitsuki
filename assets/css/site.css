@@ -1,4 +1,5 @@
 
+  html { overflow-x: hidden; }
   body { margin: 0; background: oklch(0.14 0.015 50); overflow-x: hidden; }
   * { box-sizing: border-box; }
   :root { --header-height: 60px; --footer-height: 70px; }
@@ -77,6 +78,18 @@
     z-index: -1;
     pointer-events: none;
   }
+  @media (max-width: 480px) {
+    /* このぼかしパネルは左右に-20pxはみ出す作りなので、狭い画面だとページ全体の横スクロールの原因になっていた */
+    .content-panel::before { inset: -10px -8px; }
+  }
+
+  /* ▼ シナリオ概要の表：狭い画面ではラベルと値の横並びだと窮屈で、ふりがな付きの長い語がはみ出すことがあるため
+     ラベル→値を縦積みに切り替える（インライン指定を上書きするため !important） */
+  @media (max-width: 480px) {
+    .overview-grid { grid-template-columns: 1fr !important; gap: 4px 0 !important; }
+    .overview-grid > div:nth-child(odd) { margin-top: 14px !important; }
+    .overview-grid > div:first-child { margin-top: 0 !important; }
+  }
 
   /* ▼ キャラクターセレクト風の探索者ラインナップ（タップで花札⇄立ち絵にflip） */
   .char-row {
@@ -107,7 +120,6 @@
   }
   @media (max-width: 480px) {
     .char-card { flex: 0 0 84px; width: 84px; }
-    .npc-card { flex: 0 0 84px; width: 84px; }
   }
   .char-card:hover, .char-card:focus-visible { transform: translateY(-8px); }
   /* ▼ NPCカード（探索者カードと同じサイズ感、クリックで詳細モーダル） */
@@ -122,6 +134,11 @@
   }
   .npc-card:hover, .npc-card:focus-visible { transform: translateY(-8px); color: oklch(0.85 0.1 85); border-color: oklch(0.7 0.13 85); }
   .npc-card:focus-visible { outline: 2px solid oklch(0.8 0.13 85); outline-offset: 4px; }
+  /* この上書きは必ず.npc-cardの基本定義より後ろに置くこと（先に書くと上のmax-width:480px側が
+     基本定義に上書きされてしまい、スマホでNPCカードだけ探索者カードより大きいままになるバグがあった） */
+  @media (max-width: 480px) {
+    .npc-card { flex: 0 0 84px; width: 84px; }
+  }
 
   /* ▼ 部活動・人間関係のアコーディオン */
   .info-accordion {
