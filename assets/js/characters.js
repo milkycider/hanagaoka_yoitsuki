@@ -9,45 +9,65 @@
      ho1: { type: 'ho', ho: 'HO1', hoName: '松に鶴',
             pcName: 'PCの名前', plName: 'PL名', plHandle: 'twitterID', bio: '人物紹介文' },
    pcName / plName / bio を空欄のままにしておけば「未定」「今後追加予定」と表示されます。
+
+   ▼ 立ち絵を入れたい時
+   画像ファイルは assets/tachie/ フォルダに置いてください（詳しくは
+   assets/tachie/README.txt 参照）。置いたら CHAR_DATA の該当キーに
+     cardArt:  'assets/tachie/ho1.png',   ← 探索者一覧のカード裏（flipした面）に使う絵
+     modalArt: 'assets/tachie/ho1_modal.png', ← カードをクリックした時のモーダルに使う絵
+   のようにファイルパスを書き足すだけで反映されます。
+   cardArt と modalArt は別々の画像を指定してOKです（同じ画像を使い回してもOK）。
+   空欄のままなら、今まで通り仮のシルエットが表示されます。
    ============================================================ */
 
 var CHAR_DATA = {
-  ho1:  { type: 'ho', ho: 'HO1',  hoName: '松に鶴',     pcName: '', plName: '', plHandle: '', bio: '' },
-  ho2:  { type: 'ho', ho: 'HO2',  hoName: '梅に鶯',     pcName: '', plName: '', plHandle: '', bio: '' },
-  ho3:  { type: 'ho', ho: 'HO3',  hoName: '桜に幕',     pcName: '', plName: '', plHandle: '', bio: '' },
-  ho4:  { type: 'ho', ho: 'HO4',  hoName: '藤に不如帰',  pcName: '', plName: '', plHandle: '', bio: '' },
-  ho5:  { type: 'ho', ho: 'HO5',  hoName: '菖蒲に八橋',  pcName: '', plName: '', plHandle: '', bio: '' },
-  ho6:  { type: 'ho', ho: 'HO6',  hoName: '牡丹に蝶',   pcName: '', plName: '', plHandle: '', bio: '' },
-  ho7:  { type: 'ho', ho: 'HO7',  hoName: '萩に猪',     pcName: '', plName: '', plHandle: '', bio: '' },
-  ho8:  { type: 'ho', ho: 'HO8',  hoName: '芒に月',     pcName: '', plName: '', plHandle: '', bio: '' },
-  ho9:  { type: 'ho', ho: 'HO9',  hoName: '菊に盃',     pcName: '', plName: '', plHandle: '', bio: '' },
-  ho10: { type: 'ho', ho: 'HO10', hoName: '紅葉に鹿',   pcName: '', plName: '', plHandle: '', bio: '' },
-  ho11: { type: 'ho', ho: 'HO11', hoName: '柳に燕',     pcName: '', plName: '', plHandle: '', bio: '' },
-  ho12: { type: 'ho', ho: 'HO12', hoName: '桐に鳳凰',   pcName: '', plName: '', plHandle: '', bio: '' },
+  ho1:  { type: 'ho', ho: 'HO1',  hoName: '松に鶴',     pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho2:  { type: 'ho', ho: 'HO2',  hoName: '梅に鶯',     pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho3:  { type: 'ho', ho: 'HO3',  hoName: '桜に幕',     pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho4:  { type: 'ho', ho: 'HO4',  hoName: '藤に不如帰',  pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho5:  { type: 'ho', ho: 'HO5',  hoName: '菖蒲に八橋',  pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho6:  { type: 'ho', ho: 'HO6',  hoName: '牡丹に蝶',   pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho7:  { type: 'ho', ho: 'HO7',  hoName: '萩に猪',     pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho8:  { type: 'ho', ho: 'HO8',  hoName: '芒に月',     pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho9:  { type: 'ho', ho: 'HO9',  hoName: '菊に盃',     pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho10: { type: 'ho', ho: 'HO10', hoName: '紅葉に鹿',   pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho11: { type: 'ho', ho: 'HO11', hoName: '柳に燕',     pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
+  ho12: { type: 'ho', ho: 'HO12', hoName: '桐に鳳凰',   pcName: '', plName: '', plHandle: '', bio: '', cardArt: '', modalArt: '' },
   'npc-sugawara': {
     type: 'npc', tag: 'NPC1（表 菅原・こいこい）',
     name: '菅原 恋', kana: 'すがわら れん',
-    bio: '花ヶ丘高校オカルト研究部部長。みんなを百物語に誘った張本人。<br>メガネとおさげが特徴的な、都市伝説とゴシップ好きの3年生女子。'
+    bio: '花ヶ丘高校オカルト研究部部長。みんなを百物語に誘った張本人。<br>メガネとおさげが特徴的な、都市伝説とゴシップ好きの3年生女子。',
+    modalArt: ''
   },
   'npc-onomichi': {
     type: 'npc', tag: 'NPC2（柳に小野道風）',
     name: '小野道 幸雨', kana: 'おのみち こう / おのみち しう',
-    bio: 'HO11の幼馴染。宇宙に関するオカルトが好き。<br>見た目、性別、性格ともにHO11と要相談。'
+    bio: 'HO11の幼馴染。宇宙に関するオカルトが好き。<br>見た目、性別、性格ともにHO11と要相談。',
+    modalArt: ''
   },
   'npc-okada': {
     type: 'npc', tag: 'NPC3',
     name: '岡田 八矢', kana: 'おかだ やつや',
-    bio: '花ヶ丘高校オカルト部の顧問。<br>今回宿泊許可を取ってくれた先生で、一応夜間も学校にいる。（彼女が実家に帰って暇なため）'
+    bio: '花ヶ丘高校オカルト部の顧問。<br>今回宿泊許可を取ってくれた先生で、一応夜間も学校にいる。（彼女が実家に帰って暇なため）',
+    modalArt: ''
   }
 };
 
 var SILHOUETTE_SVG = '<svg width="120" height="154" viewBox="0 0 60 130" style="display:block; margin:0 auto 22px;"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg>';
 
+// modalArt が指定されていればその画像を、無ければ仮のシルエットを返す
+function renderModalArt(data) {
+  if (data.modalArt) {
+    return '<img src="' + data.modalArt + '" alt="" style="width:120px; height:154px; object-fit:cover; border-radius:8px; display:block; margin:0 auto 22px;">';
+  }
+  return SILHOUETTE_SVG;
+}
+
 function renderCharacterModal(data) {
   if (data.type === 'npc') {
     return ''
       + '<div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.75 0.11 85); margin-bottom:18px;">' + data.tag + '</div>'
-      + SILHOUETTE_SVG
+      + renderModalArt(data)
       + '<h1 style="font-family:\'Shippori Mincho\', serif; font-size:24px; margin:0 0 6px; font-weight:700; color:oklch(0.97 0.008 70);">' + data.name + '</h1>'
       + '<p style="font-size:13px; color:oklch(0.55 0.02 70); margin:0 0 28px;">' + data.kana + '</p>'
       + '<div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 20px; text-align:left;">'
@@ -64,13 +84,29 @@ function renderCharacterModal(data) {
     : '人物情報は今後追加予定です。<br>決まり次第、こちらのページで公開します。';
   return ''
     + '<div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:18px;">' + data.ho + '　' + data.hoName + '</div>'
-    + SILHOUETTE_SVG
+    + renderModalArt(data)
     + '<h1 style="font-family:\'Shippori Mincho\', serif; font-size:22px; margin:0 0 6px; font-weight:700; color:oklch(0.97 0.008 70);">' + pcLine + '</h1>'
     + '<p style="font-size:13px; color:oklch(0.55 0.02 70); margin:0 0 28px;">' + plLine + '</p>'
     + '<div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 20px; text-align:left;">'
     +   '<p style="font-size:14px; line-height:1.9; color:oklch(0.75 0.012 70); margin:0;">' + bioBlock + '</p>'
     + '</div>';
 }
+
+// ▼ 探索者一覧カードの裏面（flipした時に見える面）の絵を差し替える
+// cardArt が指定されているHOだけ、仮のシルエットSVGを実画像に置き換える。
+// カード側のHTMLは触らず、既存の onclick="openCharacterModal('hoN')" から
+// キーを読み取って対応させているので、カードが増減しても自動で追従する。
+(function applyCardArt() {
+  document.querySelectorAll('.char-card').forEach(function(btn) {
+    var m = /openCharacterModal\('([^']+)'\)/.exec(btn.getAttribute('onclick') || '');
+    if (!m) return;
+    var data = CHAR_DATA[m[1]];
+    if (!data || !data.cardArt) return;
+    var figure = btn.querySelector('.char-figure');
+    if (!figure) return;
+    figure.innerHTML = '<img src="' + data.cardArt + '" alt="" style="width:100%; height:100%; object-fit:cover; border-radius:4px; display:block;">';
+  });
+})();
 
 // ▼ モーダルの入れ物（枠・背景・閉じるボタン）をここで組み立ててbodyに追加する
 (function buildModalShell() {
