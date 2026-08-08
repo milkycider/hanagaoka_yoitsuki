@@ -865,7 +865,7 @@
       <svg id="bgm-icon-on" viewBox="0 0 24 24" fill="none" stroke="oklch(0.85 0.13 85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="4 8 4 16 9 16 14 20 14 4 9 8" fill="oklch(0.85 0.13 85)" stroke="none"/><path d="M16 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg>
     </button>
     <div id="bgm-volume-wrap">
-      <input id="bgm-volume" type="range" min="0" max="100" value="23" oninput="setBgmVolume(this.value)" aria-label="音量">
+      <input id="bgm-volume" type="range" min="0" max="100" value="23" oninput="setBgmVolume(this.value)" onchange="this.blur()" aria-label="音量">
     </div>
   </div>
 <!-- 探索者・NPCモーダル（データ・表示ロジック・モーダルの入れ物）はこのファイルにまとまっています -->
