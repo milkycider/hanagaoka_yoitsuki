@@ -390,3 +390,9 @@
     #back-to-top { left: 14px; top: -20px; width: 40px; height: 36px; }
   }
 
+  /* ▼ トップページのお知らせ一覧：増えてきたら中だけスクロールするコンパクトな箱にする */
+  #news-list { scrollbar-width: thin; scrollbar-color: oklch(0.4 0.05 70) transparent; }
+  #news-list::-webkit-scrollbar { width: 6px; }
+  #news-list::-webkit-scrollbar-thumb { background: oklch(0.4 0.05 70); border-radius: 999px; }
+  #news-list li:last-child { border-bottom: none !important; }
+

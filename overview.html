@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概要 - 私立花ヶ丘高校秘密倶楽部</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">私立花ヶ丘高校秘密倶楽部</a>
+    <nav>
+      <a href="overview.html" class="active">概要</a>
+      <a href="schedule.html">日程・会場</a>
+      <a href="members.html">メンバー</a>
+      <a href="investigators.html">探索者</a>
+      <a href="house-rules.html">ハウスルール</a>
+      <a href="character-creation.html">キャラクター作成</a>
+    </nav>
+    <div id="header-countdown">
+      <span>開幕まで</span>
+      <span class="num" id="countdown-days-header">-</span>
+    </div>
+  </div>
+</header>
+<div id="page-wrap" style="position:relative; background:oklch(0.14 0.015 50); font-family:'Noto Sans JP', sans-serif; color:oklch(0.94 0.012 70); min-height:100vh;">
+
+  <div id="deco-cards" style="position:absolute; top:0; left:0; width:100%; height:3200px; z-index:0; pointer-events:none; overflow:hidden;">
+    <div style="position:absolute; top:3.75%; left:3%; width:130px; height:204px; border-radius:2px; box-shadow:0 18px 41px rgba(0,0,0,.55); --r0:-10deg; --r1:-5deg; --dx:8px; --dy:10px; animation:cardDrift 15s ease-in-out infinite 0s;"><img src="assets/hanafuda/01.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:16.25%; left:8%; width:96px; height:150px; border-radius:2px; box-shadow:0 14px 30px rgba(0,0,0,.50); --r0:12deg; --r1:16deg; --dx:-6px; --dy:8px; animation:cardDrift 19s ease-in-out infinite 1.4s;"><img src="assets/hanafuda/02.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:30.625%; left:5%; width:110px; height:172px; border-radius:2px; box-shadow:0 15px 34px rgba(0,0,0,.50); --r0:-14deg; --r1:-9deg; --dx:7px; --dy:-8px; animation:cardDrift 17s ease-in-out infinite 2.5s;"><img src="assets/hanafuda/03.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:47.5%; left:12%; width:88px; height:138px; border-radius:2px; box-shadow:0 12px 28px rgba(0,0,0,.45); --r0:6deg; --r1:2deg; --dx:-8px; --dy:6px; animation:cardDrift 21s ease-in-out infinite 0.6s;"><img src="assets/hanafuda/04.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:62.5%; left:6%; width:100px; height:156px; border-radius:2px; box-shadow:0 14px 31px rgba(0,0,0,.45); --r0:9deg; --r1:5deg; --dx:6px; --dy:8px; animation:cardDrift 20s ease-in-out infinite 3.3s;"><img src="assets/hanafuda/05.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:81.25%; left:10%; width:92px; height:144px; border-radius:2px; box-shadow:0 13px 29px rgba(0,0,0,.45); --r0:-7deg; --r1:-2deg; --dx:-6px; --dy:7px; animation:cardDrift 18s ease-in-out infinite 1.7s;"><img src="assets/hanafuda/06.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:1.875%; left:82%; width:108px; height:170px; border-radius:2px; box-shadow:0 15px 34px rgba(0,0,0,.55); --r0:15deg; --r1:9deg; --dx:-8px; --dy:8px; animation:cardDrift 16s ease-in-out infinite 0.9s;"><img src="assets/hanafuda/07.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:18.75%; left:88%; width:90px; height:141px; border-radius:2px; box-shadow:0 13px 28px rgba(0,0,0,.45); --r0:-8deg; --r1:-3deg; --dx:6px; --dy:-6px; animation:cardDrift 20s ease-in-out infinite 2s;"><img src="assets/hanafuda/08.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:33.75%; left:84%; width:114px; height:179px; border-radius:2px; box-shadow:0 16px 36px rgba(0,0,0,.50); --r0:9deg; --r1:14deg; --dx:-7px; --dy:9px; animation:cardDrift 18s ease-in-out infinite 3.1s;"><img src="assets/hanafuda/09.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:50%; left:90%; width:84px; height:132px; border-radius:2px; box-shadow:0 12px 26px rgba(0,0,0,.45); --r0:-5deg; --r1:0deg; --dx:6px; --dy:6px; animation:cardDrift 22s ease-in-out infinite 1.8s;"><img src="assets/hanafuda/10.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:65.625%; left:86%; width:100px; height:156px; border-radius:2px; box-shadow:0 14px 31px rgba(0,0,0,.45); --r0:11deg; --r1:6deg; --dx:-6px; --dy:8px; animation:cardDrift 19s ease-in-out infinite 0.4s;"><img src="assets/hanafuda/11.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:84.375%; left:80%; width:92px; height:144px; border-radius:2px; box-shadow:0 13px 29px rgba(0,0,0,.45); --r0:-9deg; --r1:-4deg; --dx:7px; --dy:-7px; animation:cardDrift 21s ease-in-out infinite 2.8s;"><img src="assets/hanafuda/12.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:8.75%; left:44%; width:76px; height:119px; border-radius:2px; box-shadow:0 11px 24px rgba(0,0,0,.40); opacity:0.85; --r0:4deg; --r1:9deg; --dx:5px; --dy:5px; animation:cardDrift 24s ease-in-out infinite 3.6s;"><img src="assets/hanafuda/05.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+    <div style="position:absolute; top:55.625%; left:46%; width:74px; height:116px; border-radius:2px; box-shadow:0 10px 23px rgba(0,0,0,.40); opacity:0.85; --r0:-6deg; --r1:-2deg; --dx:-5px; --dy:7px; animation:cardDrift 23s ease-in-out infinite 1.1s;"><img src="assets/hanafuda/02.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
+  </div>
+
+  <div id="overview" class="content-panel" style="position:relative; z-index:1; max-width:760px; margin:0 auto; padding:96px 24px 24px;">
+    <div style="text-align:center; margin-bottom:36px;">
+      <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">OVERVIEW</div>
+      <h2 style="font-family:'Shippori Mincho', serif; font-size:28px; margin:0; font-weight:700;">シナリオ概要</h2>
+    </div>
+
+    <div class="overview-grid" style="display:grid; grid-template-columns:auto 1fr; gap:10px 18px; background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:24px 22px; text-align:left;">
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap; padding-top:13px;">シナリオ</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">クトゥルフ神話TRPG6版「<ruby>私立花ヶ丘高校秘密倶楽部<rt style="font-size:9px; color:oklch(0.68 0.02 70);">シリツハナガオカコウコウヒミツクラブ</rt></ruby>」</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">舞台</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">現代日本　学校　夏休みの終わり</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">PL人数</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">十二人</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">セッションスタイル</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">通話を繋いだ状態のテキストセッション（半テキセ）に限定</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">環境</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">スマホ不可・PC推奨</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">プレイ時間</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">24 時間〜</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">PC 設定</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">秘匿あり、新規学生探索者限定</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">推奨技能</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">基本探索技能、オカルト、自衛程度の戦闘技能推奨</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">ロスト率</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">？</div>
+      <div style="color:oklch(0.68 0.02 70); font-size:12.5px; white-space:nowrap;">PvP 要素</div>
+      <div style="color:oklch(0.92 0.012 70); font-size:13.5px; line-height:1.8;">不回避の PvP 要素あり （本シナリオでは PvP の定義をPCとPCが殺し合いに発展することと定義する）</div>
+    </div>
+
+    <div style="text-align:left;">
+      <div style="font-size:11px; letter-spacing:0.15em; color:oklch(0.68 0.13 85); margin:36px 0 12px;">あらすじ</div>
+      <p style="font-size:13.5px; line-height:2; color:oklch(0.82 0.012 70); margin:0;">あなたたちはそれぞれがオカルトに興味のある高校生だ。<br>毎日1話ずつ順番に怪談を語っていき、<br>1週間の最後に［NPC 菅原恋］が99話目を語り終えることで百物語は終了する。<br>物語は、百物語１日目にあなたたちが花ヶ丘高校へ集まるところから始まる。</p>
+
+      <div style="font-size:11px; letter-spacing:0.15em; color:oklch(0.68 0.13 85); margin:36px 0 12px;">HO</div>
+      <p style="font-size:13.5px; line-height:1.9; color:oklch(0.82 0.012 70); margin:0 0 16px;">HO共通：あなたたちはそれぞれ怪談の語り部である。</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(96px, 1fr)); gap:8px;">
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO1</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">松に鶴🦩</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO2</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">梅に鶯🐥</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO3</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">桜に幕🌸</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO4</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">藤に不如帰🦜</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO5</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">菖蒲に八橋💠</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO6</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">牡丹に蝶🦋</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO7</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">萩に猪🐗</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO8</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">芒に月🎑</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO9</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">菊に盃🍶</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO10</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">紅葉に鹿🦌</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO11</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">柳に燕🐦</div>
+      </div>
+      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:8px; padding:12px 8px; text-align:center;">
+        <div style="font-size:10.5px; color:oklch(0.68 0.02 70); letter-spacing:0.05em; margin-bottom:4px;">HO12</div>
+        <div style="font-size:13px; color:oklch(0.9 0.012 70); font-weight:700;">桐に鳳凰🦚</div>
+      </div>
+      </div>
+
+      <div style="font-size:11px; letter-spacing:0.15em; color:oklch(0.68 0.13 85); margin:36px 0 12px;">シナリオについて</div>
+      <ol style="margin:0; padding-left:20px;">
+      <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">本シナリオはオンラインでのテキストセッション以外で回すことが禁じられています。</li>
+      <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">本シナリオはPL未通過でのKPは推奨されていません。想定されたギミックを活かせない場合があります。未通過でKPをする際は自分が未通過であること、ギミック通りの進行が難しい可能性があることをPLに伝える必要があります。（KPにとって難易度が高いシナリオです）</li>
+      <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">シナリオの更新は作者のX（<a href="https://x.com/meltcorgi" target="_blank" rel="noopener" style="color:oklch(0.8 0.13 85); text-decoration:none;">@meltcorgi</a>）で通知されます。</li>
+      <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">本シナリオに対する全ての改変は、原則として作者により許容されています。1についても禁止事項ではありますが、絶対的なものではありません。ただし、不適切な改変が判明した場合には、作者の公式アカウントより匿名で注意喚起が行われることがあります。常識的範囲内で許容される改変については、特段の制限は設けられていません。なお、極端な内容の改変やボイスセッション等に限定したケースの場合のみ、注意喚起の対象となる可能性があります。</li>
+      </ol>
+
+      <div style="font-size:11px; letter-spacing:0.15em; color:oklch(0.68 0.13 85); margin:36px 0 12px;">本シナリオに含まれる要素</div>
+      <ul style="list-style:none; margin:0 0 16px; padding:0; display:flex; flex-direction:column; gap:8px;">
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>不回避のPVPがある</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>自分のPCが相手のPCを殺害する</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>自分のPCが相手のPCに殺害される</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>PCの秘匿で他のPCに向けての感情を指定される</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>PCの自己犠牲的死亡を必要とする場面がある</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>男女関係なく妊娠の要素がある</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>動物が酷い目に遭う</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>虫を使った軽度の恐怖表現がある</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>HO内容の偏りがある</li>
+      </ul>
+      <p style="font-size:12.5px; line-height:1.9; color:oklch(0.6 0.02 70); margin:0;">本シナリオに直接的な性的描写は含まれませんが、上記の要素を考慮し、R18指定として販売されています。</p>
+    </div>
+  </div>
+
+  <div id="notes" style="position:relative; z-index:1; background:oklch(0.11 0.012 50 / 0.88); padding:40px 24px 112px;">
+    <div style="max-width:760px; margin:0 auto;">
+      <div style="text-align:center;">
+        <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">NOTES</div>
+        <h2 style="font-family:'Shippori Mincho', serif; font-size:28px; margin:0 0 40px; font-weight:700;">参加にあたって</h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:22px; text-align:left;">
+
+        <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 24px;">
+          <h3 style="font-family:'Shippori Mincho', serif; font-size:16px; margin:0 0 14px; font-weight:700; color:oklch(0.9 0.1 85);">◆ 誓約書提出方法</h3>
+          <ul style="list-style:none; margin:0 0 18px; padding:0; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>作成された個人タブにて提出。</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>内容を全て要確認の上、チェックボックスに✓を入れて署名すること。</li>
+          </ul>
+          <a href="https://discord.com/channels/1503812629678919773/1503955095447146557" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:12.5px; color:oklch(0.8 0.13 85); text-decoration:none;">記入用フォーマット画像を見る（Discord）→</a>
+        </div>
+
+        <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 24px;">
+          <h3 style="font-family:'Shippori Mincho', serif; font-size:16px; margin:0 0 14px; font-weight:700; color:oklch(0.9 0.1 85);">◆ HO提出方法</h3>
+          <ul style="list-style:none; margin:0 0 16px; padding:0; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>作成された個人タブにて提出。</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>第1希望～第3希望まで記載すること。同率希望は無し、順位をつけての提出。</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>HO分析シートも必ず提出すること。</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>通過者からおすすめされたHOがある方は合わせて提出。</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>判断がつかない場合の参考にする為に、提出時に〈1d100〉のダイスロールを個人タブで行うこと。</li>
+          </ul>
+          <p style="font-size:12px; color:oklch(0.6 0.02 70); line-height:1.8; margin:0 0 18px;">※HO分析シートと希望を確認した上でHOの決定をします。必ずしも希望通りになるとは限りません。御了承ください。</p>
+          <a href="https://discord.com/channels/1503812629678919773/1503955645869588541" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:12.5px; color:oklch(0.8 0.13 85); text-decoration:none;">記入用フォーマット画像を見る（Discord）→</a>
+          <div style="margin-top:20px; padding-top:20px; border-top:1px solid oklch(0.28 0.02 50);">
+            <p style="font-size:11.5px; letter-spacing:0.12em; color:oklch(0.6 0.02 70); margin:0 0 10px;">◆ HO診断</p>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <a href="https://kuizy.net/analysis/3002" target="_blank" rel="noopener" style="font-size:13px; color:oklch(0.85 0.1 85); text-decoration:none;">HO1～HO6 診断はこちら →</a>
+              <a href="https://kuizy.net/analysis/3003" target="_blank" rel="noopener" style="font-size:13px; color:oklch(0.85 0.1 85); text-decoration:none;">HO7～HO12 診断はこちら →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <footer id="site-footer">
+    <button id="back-to-top" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="ページ上部へ戻る">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+      <span>TOP</span>
+    </button>
+    <span class="footer-line">シナリオ：私立花ヶ丘高校秘密倶楽部</span>
+    <a class="footer-booth-btn" href="https://meltpopon.booth.pm/items/8059378" target="_blank" rel="noopener">BOOTHで見る</a>
+    <span class="footer-line footer-bgm">BGM：ふういん神社 by もみじばミュージック（<a href="https://music.storyinvention.com/" target="_blank" rel="noopener">music.storyinvention.com</a>）</span>
+  </footer>
+
+  <audio id="bgm" loop preload="none" muted>
+    <source src="assets/bgm/fuuin-zinja.mp3" type="audio/mpeg">
+  </audio>
+  <div id="bgm-control">
+    <button id="bgm-toggle" type="button" onclick="toggleBgm()" aria-label="BGMの再生・停止">
+      <svg id="bgm-icon-off" viewBox="0 0 24 24" fill="none" stroke="oklch(0.75 0.02 70)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4 8 4 16 9 16 14 20 14 4 9 8" fill="oklch(0.75 0.02 70)" stroke="none"/><line x1="16.5" y1="8.5" x2="21.5" y2="14.5"/><line x1="21.5" y1="8.5" x2="16.5" y2="14.5"/></svg>
+      <svg id="bgm-icon-on" viewBox="0 0 24 24" fill="none" stroke="oklch(0.85 0.13 85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="4 8 4 16 9 16 14 20 14 4 9 8" fill="oklch(0.85 0.13 85)" stroke="none"/><path d="M16 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg>
+    </button>
+    <div id="bgm-volume-wrap">
+      <input id="bgm-volume" type="range" min="0" max="100" value="23" oninput="setBgmVolume(this.value)" onchange="this.blur()" aria-label="音量">
+    </div>
+  </div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
