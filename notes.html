@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>探索者作成 - 私立花ヶ丘高校秘密倶楽部</title>
+<title>注意事項 - 私立花ヶ丘高校秘密倶楽部</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -17,9 +17,9 @@
       <a href="schedule.html">日程・会場</a>
       <a href="members.html">メンバー</a>
       <a href="investigators.html">探索者</a>
-      <a href="notes.html">注意事項</a>
+      <a href="notes.html" class="active">注意事項</a>
       <a href="house-rules.html">ハウスルール</a>
-      <a href="character-creation.html" class="active">探索者作成</a>
+      <a href="character-creation.html">探索者作成</a>
     </nav>
     <div id="header-countdown">
       <span>開幕まで</span>
@@ -45,76 +45,24 @@
     <div style="position:absolute; top:8.75%; left:44%; width:76px; height:119px; border-radius:2px; box-shadow:0 11px 24px rgba(0,0,0,.40); opacity:0.85; --r0:4deg; --r1:9deg; --dx:5px; --dy:5px; animation:cardDrift 24s ease-in-out infinite 3.6s;"><img src="assets/hanafuda/05.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
     <div style="position:absolute; top:55.625%; left:46%; width:74px; height:116px; border-radius:2px; box-shadow:0 10px 23px rgba(0,0,0,.40); opacity:0.85; --r0:-6deg; --r1:-2deg; --dx:-5px; --dy:7px; animation:cardDrift 23s ease-in-out infinite 1.1s;"><img src="assets/hanafuda/02.png" alt="花札" style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;"></div>
   </div>
-  <div class="content-panel" style="position:relative; z-index:1; max-width:760px; margin:0 auto; padding:96px 24px 140px;">
-    <div style="text-align:center;">
-      <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">INVESTIGATOR CREATION</div>
-      <h2 style="font-family:'Shippori Mincho', serif; font-size:28px; margin:0 0 44px; font-weight:700;">探索者作成</h2>
+
+  <div id="notes" class="content-panel" style="position:relative; z-index:1; max-width:760px; margin:0 auto; padding:96px 24px 140px; text-align:left;">
+    <div style="text-align:center; margin-bottom:36px;">
+      <div style="font-size:12px; letter-spacing:0.2em; color:oklch(0.8 0.13 85); margin-bottom:10px;">NOTES</div>
+      <h2 style="font-family:'Shippori Mincho', serif; font-size:28px; margin:0; font-weight:700;">注意事項</h2>
     </div>
 
-    <div style="display:flex; flex-direction:column; gap:24px; text-align:left;">
-
-      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 24px;">
-        <h3 style="font-family:'Shippori Mincho', serif; font-size:16px; margin:0 0 18px; font-weight:700; color:oklch(0.9 0.1 85);">▼ 本シナリオにおける学生探索者の作成ルール</h3>
-        <ol style="margin:0; padding-left:20px;">
-          <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">〈EDU〉は 6～12 からの間で自由に決める</li>
-          <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">
-            職業技能は 8 つまで選択してよい
-            <ul style="list-style:none; margin:8px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
-              <li style="font-size:12.5px; line-height:1.8; color:oklch(0.65 0.02 70);">→　職業技能ポイントは【EDU×20】固定</li>
-              <li style="font-size:12.5px; line-height:1.8; color:oklch(0.65 0.02 70);">→　将来なりたい職業としてルルブの職業にあわせてもよい（この子ならこう、として8個まで選んでもよい）</li>
-              <li style="font-size:12.5px; line-height:1.8; color:oklch(0.65 0.02 70);">→　特記は使用不可</li>
-            </ul>
-          </li>
-          <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">
-            特徴表はHOによって決められたものの他に、PLが 1 種付け加えてもよい
-            <ul style="list-style:none; margin:8px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
-              <li style="font-size:12.5px; line-height:1.8; color:oklch(0.65 0.02 70);">→　2 回振って好きな方を選んでよいが、付けなくてもよい</li>
-            </ul>
-          </li>
-          <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">
-            技能値の上限は 70% までとする
-            <ul style="list-style:none; margin:8px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
-              <li style="font-size:12.5px; line-height:1.8; color:oklch(0.65 0.02 70);">→　60 以上の技能はキャラシに理由を書くこと</li>
-            </ul>
-          </li>
-          <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin-bottom:14px; padding-left:4px;">〈英語〉の初期値は【EDU×1】の値とする</li>
-          <li style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); padding-left:4px;">技能は一括振りは回数制限なし、一括振り後の部分ダイスは合計 3 回まで</li>
-        </ol>
-      </div>
-
-      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 24px;">
-        <h3 style="font-family:'Shippori Mincho', serif; font-size:16px; margin:0 0 14px; font-weight:700; color:oklch(0.9 0.1 85);">▼ 持ち物について</h3>
-        <p style="font-size:13.5px; line-height:1.9; color:oklch(0.85 0.012 70); margin:0 0 16px;">夕方～夜の学校に集まることとなる。宿泊も可能。<br>そのため、持ち物が多くなることが予想される。</p>
-        <ul style="list-style:none; margin:0 0 18px; padding:0; display:flex; flex-direction:column; gap:8px;">
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>下記の「持ち物リスト」のような形式で自身の持ち物を記入した後、Discordの個人タブへ送ること。</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>キャラシに記入ではなく、必ず個人タブへと記載。</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>持ってきておいて部室に置く物と、常時自分で持っている物は分けること。</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>自分より大きい物、明らかに隠せない物は隠して持つことが出来ない。</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>パッと見て判らない物は、〈隠す〉に成功しなくても隠されている状態である。</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>部室に置いておく物は花ヶ丘高校の部室においてある物となる。</li>
-          <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>持ってきてはいるが、持ち歩いてない物とする。</li>
-        </ul>
-        <p style="font-size:12px; letter-spacing:0.1em; color:oklch(0.6 0.02 70); margin:0 0 8px;">持ち物リスト</p>
-        <pre style="background:oklch(0.13 0.015 50); border:1px solid oklch(0.28 0.02 50); border-radius:8px; padding:18px 20px; margin:0; font-family:inherit; font-size:12.5px; line-height:2; color:oklch(0.75 0.012 70); white-space:pre-wrap; overflow-x:auto;">常備品
-・
-・
-・
-・
-────────────────────
-部室においておく物
-・
-・
-・
-・
-・</pre>
-      </div>
-
-      <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 24px;">
-        <h3 style="font-family:'Shippori Mincho', serif; font-size:16px; margin:0 0 14px; font-weight:700; color:oklch(0.9 0.1 85);">▼ 制服資料</h3>
-        <p style="font-size:13px; line-height:1.8; color:oklch(0.8 0.012 70); margin:0 0 16px;">花ヶ丘高校の制服画像はDiscordのチャンネルを参照してください。</p>
-        <a href="https://discord.com/channels/1503812629678919773/1503911109894078544" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:12.5px; color:oklch(0.8 0.13 85); text-decoration:none;">制服資料を見る（Discord）→</a>
-      </div>
-
+    <div style="background:oklch(0.18 0.015 50); border:1px solid oklch(0.3 0.02 50); border-radius:10px; padding:26px 24px;">
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;">
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>出目によっては全く情報が抜けないことがある。</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>何も判らないまま進む可能性も大いに有り得る。</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>HOによっては情報量の差が大きく出る場合がある。</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>HOによっては感情の指定もある為、RPでどうにも出来ないこともある。</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>全員が被害者にも、加害者にも成り得る。絶対的な中立はない。</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>全員と話せたり、仲良くなれたり訳ではない。セッション中は不仲に終わる可能性が高い。仲良くなりたい場合は全員生還してからとなる。</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>PL同士は仲良く。</li>
+        <li style="display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.8; color:oklch(0.85 0.012 70);"><span style="color:oklch(0.65 0.16 30); flex-shrink:0;">・</span>PLとPCの感情を混同しないこと。</li>
+      </ul>
     </div>
   </div>
 

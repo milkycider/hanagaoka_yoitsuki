@@ -172,3 +172,112 @@ function setBgmVolume(val) {
   var audio = document.getElementById('bgm');
   if (audio) audio.volume = 0.23;
 })();
+
+// ココフォリア非公開コマ変換ツール（日程・会場ページ）
+// 貼り付けられたコマ出力JSONの data オブジェクトに secret:true を追加し、
+// 任意でキャラクターメモを「PC名の読み方/PL名」に置き換え、
+// チャットパレットのダイスコマンドを（正気度ロールを除いて）シークレット化して出力する
+
+// コマンド1行の先頭トークンが「ダイスを振るコマンド」かどうかを判定する
+// （例：1D100<=70 / CCB<=75 / 1D3+{DB} / 2D10分間スタン はダイスコマンド、
+// 　　　スタン のような数値の無いラベルだけの行はダイスコマンドではない）
+function isCcfoliaDiceToken(token) {
+  return /^\d*[dD]\d|^CCB|^CC(?![A-Za-z])/i.test(token);
+}
+// コマンド1行が正気度ロール（SANc）かどうかを判定する
+function isCcfoliaSanRoll(line) {
+  return /\{SAN\}/i.test(line) || /正気度|SAN[Cc]/.test(line);
+}
+// 技能判定形式（CCB<= / CC<= / 1d100<= / 1D100<=）は、書き出し元によって表記が
+// 揺れるため、判定部分をすべて「CCB<=」に揃える（それ以外のダメージロール等はそのまま）
+function normalizeCcfoliaCheckToken(token) {
+  var m = token.match(/^(?:CCB|CC|1[dD]100)(<=.*)$/i);
+  return m ? 'CCB' + m[1] : null;
+}
+// 予めシークレットダイスとなるように、コマンド1行の先頭トークンに s を付与する
+function secretizeCcfoliaCommandLine(line) {
+  var m = line.match(/^(\S+)(.*)$/);
+  if (!m) return line;
+  var token = m[1];
+  var rest = m[2];
+  if (isCcfoliaSanRoll(line)) return line; // 正気度ロールは対象外
+
+  var alreadySecret = /^[sS]/.test(token);
+  var bareToken = alreadySecret ? token.slice(1) : token;
+
+  var normalized = normalizeCcfoliaCheckToken(bareToken);
+  if (normalized) return 's' + normalized + rest; // CCB / CC / 1d100 / 1D100 → sCCB<= に統一
+
+  if (!isCcfoliaDiceToken(bareToken)) return line; // ダイスを振らない行はそのまま
+  if (alreadySecret) return line; // 既にs付きのダイスコマンド
+  return 's' + token + rest;
+}
+function convertCcfoliaSecret() {
+  var input = document.getElementById('ccfolia-secret-input');
+  var output = document.getElementById('ccfolia-secret-output');
+  var msg = document.getElementById('ccfolia-secret-message');
+  var nameInput = document.getElementById('ccfolia-secret-name');
+  var readingInput = document.getElementById('ccfolia-secret-reading');
+  var plnameInput = document.getElementById('ccfolia-secret-plname');
+  if (!input || !output) return;
+  var raw = input.value.trim();
+  if (!raw) {
+    if (msg) { msg.textContent = 'テキストを貼り付けてください。'; msg.style.color = 'oklch(0.65 0.16 30)'; }
+    output.value = '';
+    return;
+  }
+  try {
+    var obj = JSON.parse(raw);
+    if (!obj || typeof obj.data !== 'object' || obj.data === null) {
+      throw new Error('data形式が見つかりません');
+    }
+    obj.data.secret = true;
+
+    // PCの名前の入力があれば、名前欄をその内容に置き換える
+    var name = nameInput ? nameInput.value.trim() : '';
+    if (name) {
+      obj.data.name = name;
+    }
+
+    // PC名の読み方／PL名 の入力があれば、メモ欄をその内容だけに置き換える
+    var reading = readingInput ? readingInput.value.trim() : '';
+    var plname = plnameInput ? plnameInput.value.trim() : '';
+    if (reading || plname) {
+      obj.data.memo = 'PC名 / PL名\n' + reading + ' / ' + plname;
+    }
+
+    // チャットパレットを、正気度ロール以外シークレットダイス（s付き）に変換する
+    if (typeof obj.data.commands === 'string' && obj.data.commands) {
+      obj.data.commands = obj.data.commands.split('\n').map(secretizeCcfoliaCommandLine).join('\n');
+    }
+
+    output.value = JSON.stringify(obj);
+    if (msg) { msg.textContent = '変換しました。「出力をコピー」からコピーしてください。'; msg.style.color = 'oklch(0.75 0.11 85)'; }
+  } catch (e) {
+    output.value = '';
+    if (msg) { msg.textContent = '変換できませんでした。貼り付けたテキストの形式を確認してください。'; msg.style.color = 'oklch(0.65 0.16 30)'; }
+  }
+}
+function copyCcfoliaSecretOutput() {
+  var output = document.getElementById('ccfolia-secret-output');
+  var msg = document.getElementById('ccfolia-secret-message');
+  if (!output) return;
+  if (!output.value) {
+    if (msg) { msg.textContent = '先に「非公開データに変換」を押してください。'; msg.style.color = 'oklch(0.65 0.16 30)'; }
+    return;
+  }
+  function showCopied() {
+    if (msg) { msg.textContent = 'コピーしました。ココフォリアの盤面に貼り付けてください。'; msg.style.color = 'oklch(0.75 0.11 85)'; }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(output.value).then(showCopied).catch(function() {
+      output.select();
+      document.execCommand('copy');
+      showCopied();
+    });
+  } else {
+    output.select();
+    document.execCommand('copy');
+    showCopied();
+  }
+}

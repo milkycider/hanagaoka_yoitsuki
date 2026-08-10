@@ -55,7 +55,7 @@ var CHAR_DATA = {
 
 var SILHOUETTE_SVG = '<svg width="120" height="154" viewBox="0 0 60 130" style="display:block; margin:0 auto 22px;"><circle cx="30" cy="24" r="20" fill="oklch(0.4 0.02 50)"/><path d="M8 130 L8 90 Q8 60 30 60 Q52 60 52 90 L52 130 Z" fill="oklch(0.4 0.02 50)"/></svg>';
 
-// modalArt が指定されていればその画像を、無ければ仮のシルエットを返す
+// modalArt が指定されていればその画像を、なければ仮のシルエットを返す
 function renderModalArt(data) {
   if (data.modalArt) {
     return '<img src="' + data.modalArt + '" alt="" style="width:120px; height:154px; object-fit:cover; border-radius:8px; display:block; margin:0 auto 22px;">';
